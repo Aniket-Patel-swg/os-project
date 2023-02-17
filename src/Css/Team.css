@@ -1,0 +1,75 @@
+.teamlist{
+position: absolute;
+height: 48px;
+left: 82px;
+right: 818px;
+top: 2908px;
+width: 400px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 48px;
+
+
+color:rgb(77 1 137 / 87%);
+}
+
+
+
+.row1 li{
+    position: relative;
+    
+     top: 2900px;
+     left: 200px;
+    padding: auto;
+     width: 200px;
+     color:  rgb(154, 60, 188);
+     font-size: 20px;
+     font-weight: 500;
+     display: inline-block;
+     padding-right:200px;
+    
+ }
+ .row2 li{
+ 
+    padding-right:200px;
+     top: 2910px;
+     left: 200px;
+     height: 50px;
+    position: relative;
+     width: 200px;
+     color:  rgb(35, 64, 99);
+     font-size: 20px;
+     font-weight: 500;
+     display: inline-block;
+ 
+ }
+
+ .row3 li{
+    padding-right:200px;
+    top: 2930px;
+    left: 200px;
+    
+   position: relative;
+    width: 200px;
+    color:  rgb(154, 60, 188);
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+
+ }
+
+ .row4 li{
+    padding-right:200px;
+     top: 2940px;
+     left: 200px;
+     height: 50px;
+    position: relative;
+     width: 200px;
+     color: rgb(35, 64, 99);
+     font-size: 20px;
+     font-weight: 500;
+     display: inline-block;
+ }
