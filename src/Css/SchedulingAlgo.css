@@ -1,4 +1,20 @@
-.algo{
-    background-color: antiquewhite;
+.table-container{
     padding: 2em;
+    position: absolute;
+    /* background-color: transparent; */
+    color: transparent;
+}   
+video {
+    object-fit: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    /* position: fixed;   */
+    z-index: 0;
+}
+.video-container{
+    position: absolute;
+}
+TableContainer {
+    background-color: transparent;
 }
