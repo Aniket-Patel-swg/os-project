@@ -2,6 +2,7 @@ import React from "react";
 import '../Css/Homepage.css';
 import Navbar from "./Navbar.jsx";
 import Team from "./Team";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
     const handleClick = () => {
@@ -9,8 +10,8 @@ const Homepage = () => {
     }
     return ( 
         <>  
-        <div className="home-page">
             <Navbar/>
+                <div className="home-page">
            <div>
            <div className="img1">
                 <img src="scientist.png" alt="scientist"></img>
@@ -36,7 +37,11 @@ const Homepage = () => {
                 <h2 className="algo1">Priority Scheduling Algorithm</h2>
                 <p className="para1">The Preemptive Priority CPU Scheduling Algorithm is a preemptive method of CPU scheduling algorithms that work based on process priority. When a process arrives in the ready queue, its priority is compared with the priority of other processes in the ready queue and the priority of processes being executed by the CPU at that time. 
                 The process with the highest priority among all available processes gets the CPU next.</p>
-                <button className="button1" onClick={handleClick}>Open Simulator</button>
+                <button className="button1" onClick={handleClick}>
+                    <Link to="/SchedulingAlgo">
+                        Open Simulator
+                    </Link>
+                </button>
                
             </div>
             <div className="img3">
@@ -70,7 +75,6 @@ const Homepage = () => {
           <Team />
         </div>
         </>
-     );
-}
- 
+)};
+
 export default Homepage;
