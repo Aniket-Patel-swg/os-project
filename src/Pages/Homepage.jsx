@@ -1,7 +1,7 @@
 import React from "react";
 import '../Css/Homepage.css';
-import Navbar from "./Navbar.jsx";
-import Team from "./Team";
+// import Navbar from "./Navbar.jsx";
+// import Team from "./Team";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
@@ -10,7 +10,7 @@ const Homepage = () => {
     }
     return ( 
         <>  
-            <Navbar/>
+            {/* <Navbar/> */}
                 <div className="home-page">
            <div>
            <div className="img1">
@@ -71,7 +71,7 @@ const Homepage = () => {
                 or write to disk. Page replacement is done when the requested page is not found in the main memory (page fault).</p>
                 <button className="button4" onClick={handleClick}>Open Simulator</button>
             </div>
-          <Team />
+          {/* <Team /> */}
         </div>
         </>
 )};

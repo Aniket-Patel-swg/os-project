@@ -61,7 +61,7 @@
 
 import React, {useState} from "react";
 import '../Css/SchedulingAlgo.css';
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import {
   TableContainer,
   Table,
@@ -178,7 +178,7 @@ const [process, setProcess] = useState(Processes);
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="scheduling-algo-page">
         <div className="video-container">
           <video src="../video.mp4" autoPlay loop muted></video>
