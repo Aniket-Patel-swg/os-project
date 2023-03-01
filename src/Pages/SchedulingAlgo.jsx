@@ -1,5 +1,67 @@
-import React, { useState } from "react";
-import "../Css/SchedulingAlgo.css";
+// <<<<<<< HEAD
+// import React, { useState } from "react";
+// import "../Css/SchedulingAlgo.css";
+
+
+// const SchedulingAlgo = () => {
+//   // function createProcess(
+
+//   // ) {
+
+//   // }
+//   // const tableData = [{
+//   //     "process_id": 1,
+//   //     "priority": "",
+//   //     "AT": "",
+//   //     "BT": "",
+//   //     "CT": "",
+//   //     "TAT": "",
+//   //     "WT": "",
+//   //     "RT": "",
+//   //     "del_process": ""
+//   //   }]
+
+//   //   const [formData, setFormData] = useState([
+//   //     {
+//   //         "process_id" :(Math.floor((Math.random()*100))),
+//   //         "priority" : "",
+//   //         "AT" : "",
+//   //         "BT" : "",
+//   //         "CT" : "",
+//   //         "TAT" : "",
+//   //         "WT" : "",
+//   //         "RT" : "",
+//   //         "del_process" : ""
+//   //     }
+//   //   ])
+
+//   //   const handleChange = (index,event) => {
+//   //     const values = [...formData];
+//   //     values[index][event.target.name] = event.target.value;
+//   //     setFormData(values);
+//   //   }
+
+//   //   const handleAddField = () => {
+//   //     console.log('Add Button is clicked !')
+//   //     const values = {
+//   //             processID : (Math.floor((Math.random()*100))),
+//   //             priority : "",
+//   //             arrivalTime : "",
+//   //             burstTime : ""
+//   //     }
+//   //     setFormData([...formData,values]);
+//   //   }
+
+//   //   const handleRemoveField = (index,PID) =>{
+//   //         console.log('Remove button is clicked !')
+//   //         const values = [...formData]
+//   //         values.splice(index,1);
+//   //         setFormData(values);
+//   //   }
+
+import React, {useState} from "react";
+import '../Css/SchedulingAlgo.css';
+import Navbar from "./Navbar";
 import {
   TableContainer,
   Table,
@@ -17,64 +79,28 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
 const SchedulingAlgo = () => {
-  // function createProcess(
+//     return ( 
+//         <>  <Navbar />
+//             <div className="algo">
+//                 Scheduling Algo check text
+//             </div>
+//         </>
+//      );
+// }
 
-  // ) {
+const Processes = [createData("1", "", "", "", "", "", "", "")];
 
-  // }
-  // const tableData = [{
-  //     "process_id": 1,
-  //     "priority": "",
-  //     "AT": "",
-  //     "BT": "",
-  //     "CT": "",
-  //     "TAT": "",
-  //     "WT": "",
-  //     "RT": "",
-  //     "del_process": ""
-  //   }]
-
-  //   const [formData, setFormData] = useState([
-  //     {
-  //         "process_id" :(Math.floor((Math.random()*100))),
-  //         "priority" : "",
-  //         "AT" : "",
-  //         "BT" : "",
-  //         "CT" : "",
-  //         "TAT" : "",
-  //         "WT" : "",
-  //         "RT" : "",
-  //         "del_process" : ""
-  //     }
-  //   ])
-
-  //   const handleChange = (index,event) => {
-  //     const values = [...formData];
-  //     values[index][event.target.name] = event.target.value;
-  //     setFormData(values);
-  //   }
-
-  //   const handleAddField = () => {
-  //     console.log('Add Button is clicked !')
-  //     const values = {
-  //             processID : (Math.floor((Math.random()*100))),
-  //             priority : "",
-  //             arrivalTime : "",
-  //             burstTime : ""
-  //     }
-  //     setFormData([...formData,values]);
-  //   }
-
-  //   const handleRemoveField = (index,PID) =>{
-  //         console.log('Remove button is clicked !')
-  //         const values = [...formData]
-  //         values.splice(index,1);
-  //         setFormData(values);
-  //   }
-
-  const Processes = [createData("1", "", "", "", "", "", "", "")];
-
-  function createData(
+function createData(
+  PID,
+  Priority,
+  Arrival_Time,
+  Burst_Time,
+  Completion_Time,
+  TurnAround_Time,
+  Waiting_Time,
+  Response_Time
+) {
+  return {
     PID,
     Priority,
     Arrival_Time,
@@ -82,22 +108,11 @@ const SchedulingAlgo = () => {
     Completion_Time,
     TurnAround_Time,
     Waiting_Time,
-    Response_Time
-  ) {
-    return {
-      PID,
-      Priority,
-      Arrival_Time,
-      Burst_Time,
-      Completion_Time,
-      TurnAround_Time,
-      Waiting_Time,
-      Response_Time,
-    };
-  }
+    Response_Time,
+  };
+}
 
-  const [process, setProcess] = useState(Processes);
- 
+const [process, setProcess] = useState(Processes);
   // const regex = /^[+]?([1-9][0-9](?:[\.][0-9]*)?|0\.0*[1-9][0-9]*)(?:[eE][+-][0-9]+)?$/
   //Add Process
   const addProcess = () => {
@@ -163,6 +178,7 @@ const SchedulingAlgo = () => {
 
   return (
     <>
+      <Navbar />
       <div className="scheduling-algo-page">
         <div className="video-container">
           <video src="../video.mp4" autoPlay loop muted></video>
