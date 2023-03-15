@@ -23,6 +23,8 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from './Pages/Homepage.jsx';
 import SchedulingAlgo from './Pages/SchedulingAlgo.jsx';
+import Fcfs from './Pages/Fcfs.jsx';
+
 import './Css/Homepage.css'
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
          <Routes>
               <Route path='/' element = {<Homepage />}/>
               <Route path='/SchedulingAlgo' element = {<SchedulingAlgo />}/>
+              <Route path='/Fcfs' element = {<Fcfs />}/>
          </Routes>
     </div>
   );

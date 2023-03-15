@@ -183,6 +183,7 @@ const [process, setProcess] = useState(Processes);
         <div className="video-container">
           <video src="../video.mp4" autoPlay loop muted></video>
         </div>
+        
         <div className="table-container">
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
