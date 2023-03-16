@@ -114,6 +114,7 @@ const Peterson = () => {
   const [ball2Pos, setBall2Pos] = useState({ top: 100, left: 100 });
   const [ball1InSection, setBall1InSection] = useState(false);
   const [ball2InSection, setBall2InSection] = useState(false);
+  const [simulateButtonClicked, setSimulateButtonClicked] = useState(false);
 
   const handleSimulate = () => {
     const screenWidth = window.innerWidth;
@@ -121,6 +122,7 @@ const Peterson = () => {
     const ball2NewPos = { top: 100, left: screenWidth * 0.5 };
     setBall1Pos(ball1NewPos);
     setBall2Pos(ball2NewPos);
+    setSimulateButtonClicked(true);
   };
 
   const handleApplyAlgorithms = (ballNumber) => {
@@ -164,10 +166,10 @@ const Peterson = () => {
     <>
       Check text
       <div>
-        <button onClick={() => handleApplyAlgorithms(1)} disabled={ball1InSection}>
+        <button onClick={() => handleApplyAlgorithms(1)} disabled={ball1InSection || !simulateButtonClicked}>
           <Ball top={ball1Pos.top} left={ball1Pos.left} />
         </button>
-        <button onClick={() => handleApplyAlgorithms(2)} disabled={ball2InSection}>
+        <button onClick={() => handleApplyAlgorithms(2)} disabled={ball2InSection || !simulateButtonClicked}>
           <Ball top={ball2Pos.top} left={ball2Pos.left} />
         </button>
         <button onClick={handleSimulate}>Simulate</button>
