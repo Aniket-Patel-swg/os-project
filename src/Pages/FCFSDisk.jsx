@@ -9,14 +9,14 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
    
       
 
-const Fcfs = () => {
+const FCFSDisk = () => {
     const tableData = [{
-        "request_id": 1,
+        "prequest_id": 1,
         "request_sequence": "",
         
         "del_process": ""
       }]
-    
+
       const placementData = [
         {
           Year: "2016",
@@ -44,16 +44,14 @@ const Fcfs = () => {
           highest: 25,
         },
       ]
+    
 
-      
-
-      
      
+
+      
+  
     return ( 
         <>  
-         {/* <div className="video-container">
-          <video src="../video.mp4" autoPlay loop muted></video>
-        </div> */}
         <div className="intial-head">
         <TableContainer component={Paper}>
             <Table aria-label = 'simple table'>
@@ -118,10 +116,11 @@ const Fcfs = () => {
           <Button variant="contained" style={{ backgroundColor: "#343536" }}>ADD PROCESS</Button>
           <Button variant="contained">RESULT</Button>
           <Button variant="contained" style={{ backgroundColor: "#f7404d" }}>RESET</Button>
+          
         </Stack>
         </div>
 
-         {   <ResponsiveContainer width="70%" height="50%" aspect={3}>
+        <ResponsiveContainer width="70%" height="50%" aspect={3}>
           <LineChart
             data={placementData}
             width={500}
@@ -136,7 +135,7 @@ const Fcfs = () => {
             <Tooltip contentStyle={{backgroundColor: "#f1f1f1"}} />
             <Legend />
           </LineChart>
-        </ResponsiveContainer>}
+        </ResponsiveContainer>
 
    
 
@@ -144,6 +143,6 @@ const Fcfs = () => {
      );
     }
 
-export default Fcfs;
 
- 
+
+export default FCFSDisk;

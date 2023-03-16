@@ -51,7 +51,11 @@ const Homepage = () => {
                 <h2 className="algo2">Peterson's Algorithm</h2>
                 <p className="para2">Peterson's algorithm is a process synchronization algorithm. It is a simultaneous mutual exclusion programming algorithm that allows two
                  or more processes to share a single-use resource without conflict, using only shared memory for communication.</p>
-                 <button className="button2" onClick={handleClick}>Open Simulator</button>
+                 <button className="button2" onClick={handleClick}>
+                    <Link to="/peterson">
+                    Open Simulator
+                    </Link>
+                </button>
             </div>
             <div className="img4">
                 <img src="book.png" alt="book"></img>
@@ -60,11 +64,7 @@ const Homepage = () => {
                 <h2 className="algo3">First-Come-First Serve disk scheduling algorithm</h2>
                 <p className="para3">FCFS is the simplest disk scheduling algorithm. As the name suggests, this algorithm entertains requests in the order they arrive in the disk queue. The algorithm looks very 
                 fair and there is no starvation (all requests are serviced sequentially) but generally, it does not provide the fastest service.</p>
-                <Link to = "/fcfs">
-                    <button className="button3" onClick={handleClick}>
-                        Open Simulator
-                    </button>
-                </Link>
+                <Link to = "/FCFSDisk"><button className="button3" onClick={handleClick}>Open Simulator</button></Link>
             </div>
             <div className="img5">
                 <img src="puzzle.png" alt="puzzle"></img>
