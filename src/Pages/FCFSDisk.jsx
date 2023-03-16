@@ -13,10 +13,10 @@ export const arrayData =[];
 
 const FCFSDisk = () => {
 
-    const [showChart, setShowChart]=React.useState(false);
-  const [newData, setNewData] = React.useState("");
-  const [currPos, setCurrPos] = React.useState("");
-  const [isDisabled, setisDisabled] = React.useState(false);
+//     const [showChart, setShowChart]=React.useState(false);
+//   const [newData, setNewData] = React.useState("");
+//   const [currPos, setCurrPos] = React.useState("");
+//   const [isDisabled, setisDisabled] = React.useState(false);
 
 
 
