@@ -132,9 +132,6 @@ const FCFSDisk = () => {
                                   size="small"
                                 />
                             </TableCell>
-                            
-                           
-                            
                             <TableCell align="center">{row.del_process}
                               <IconButton aria-label="delete">
                                 <DeleteIcon />
@@ -176,8 +173,6 @@ const FCFSDisk = () => {
 
         </>
      );
-    }
-
-
-
+}
+  
 export default FCFSDisk;
