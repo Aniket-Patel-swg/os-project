@@ -3,9 +3,10 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from './Pages/Homepage.jsx';
 import SchedulingAlgo from './Pages/SchedulingAlgo.jsx';
+import FCFSNew from './Pages/FCFSNew.jsx';
 import './Css/Homepage.css'
-import FCFS from './Pages/FCFS';
 import Peterson from './Pages/Peterson';
+// import FCFSDisk from './Pages/FCFSDisk';
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
          <Routes>
               <Route path='/' element = {<Homepage />}/>
               <Route path='/SchedulingAlgo' element = {<SchedulingAlgo />}/>
-              {/* <Route path='/fcfs' element = {<FirstComeFirstServe />}/> */}
-              <Route path='/fcfs' element = {<FCFS />} />
+              {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
               <Route path='/peterson' element={<Peterson />} />
+             < Route path='/fcfs' element={<FCFSNew />} />
          </Routes>
     </div>
   );

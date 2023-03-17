@@ -28,7 +28,7 @@
       left: 0%;
     }
     100% {
-      left: 70%;
+      left: 50%;
     }
   }
   
@@ -37,15 +37,17 @@
       right: 0%;
     }
     100% {
-      right: 70%;
+      right: 50%;
     }
   }
   .critical-section{
-    background-color: black;
-    width: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15em;
+    height: 8em;
     position: absolute;
-    margin-top:200px;
-    margin-left:700px;
+    top: 2.7em;
+    left: 8.56in;
+    z-index: -1;
   }
   .critical-section p{
     color: white;
