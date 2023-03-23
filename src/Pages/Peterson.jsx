@@ -164,7 +164,7 @@ const Peterson = () => {
 
   return (
     <>
-      Check text
+      {/* Check text */}
       <div>
         <button onClick={() => handleApplyAlgorithms(1)} disabled={ball1InSection || !simulateButtonClicked}>
           <Ball top={ball1Pos.top} left={ball1Pos.left} />
@@ -172,16 +172,23 @@ const Peterson = () => {
         <button onClick={() => handleApplyAlgorithms(2)} disabled={ball2InSection || !simulateButtonClicked}>
           <Ball top={ball2Pos.top} left={ball2Pos.left} />
         </button>
-        <button onClick={handleSimulate}>Simulate</button>
+        <button className="Simulate" onClick={handleSimulate}>Simulate</button>
       </div>
-      <button className="exit-cirtical-section">
-      </button>
-      <button onClick={handleExitCriticalSection} disabled={!ball1InSection && !ball2InSection}>
+      {/* <button className="exit-cirtical-section">
+      </button> */}
+      <button className="exit-cirtical-section" onClick={handleExitCriticalSection} disabled={!ball1InSection && !ball2InSection}>
         Exit Critical Section
       </button>
       <div className="critical-section">
         Critical Section
       </div>
+      <div className="Remainder-section">
+        Remainder Section
+      </div>
+      <div className="Entry-section">
+        Entry Section
+      </div>
+
 </>
 );
 };
