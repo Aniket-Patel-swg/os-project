@@ -52,7 +52,7 @@ function OptPR()
           const remainingPages = pageRefrences.slice(i + 1);
           const nextIndex = remainingPages.indexOf(Frame);
           return nextIndex === -1 ? Infinity : nextIndex;
-          cell.style.backgroundColor = "#eb4d4b";
+         
         });
         const index = distances.indexOf(Math.max(...distances));
         componetMemoryState[index] = page;
