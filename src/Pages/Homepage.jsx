@@ -74,7 +74,7 @@ const Homepage = () => {
                 <h2 className="algo4">Optimal Page replacement algorithm</h2>
                 <p className="para4">The page replacement algorithm decides which memory page is to be replaced. The process of replacement is sometimes called swap out 
                 or write to disk. Page replacement is done when the requested page is not found in the main memory (page fault).</p>
-                <Link to = "/OPtPR"><button className="button4" onClick={handleClick}>Open Simulator</button></Link>
+                <Link to = "/OptPR"><button className="button4" onClick={handleClick}>Open Simulator</button></Link>
             </div>
           {/* <Team /> */}
         </div>

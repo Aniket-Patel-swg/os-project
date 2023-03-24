@@ -13,3 +13,35 @@
     padding: auto;
 
 }
+
+.btn{
+    margin: 57px 660px;
+    padding: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #ddd;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  table.table td.pageFault {
+    background-color: red;
+  }
+
+  .pageFault{
+background-color: red;
+  }
