@@ -1,4 +1,5 @@
 
+import { tableCellClasses } from "@mui/material";
 import React, { useState } from "react";
 import "../Css/OptPR.css";
 
@@ -9,6 +10,7 @@ function OptPR()
     const [Frames,SetFrames] = useState(0);
     const [componetMemoryState,SetComponentMemoryState] = useState([]);
   const [pageFaults, setPageFaults] = useState(0);
+  //const [previousPageFaults, setPreviousPageFaults] = useState(0);
   const [tableData, setTableData] = useState([]);
   const [tableHeading, setTableHeading] = useState(false)
   const [pageFaultParagraph, setPageFaultParagraph] = useState(false)
@@ -34,7 +36,9 @@ function OptPR()
     const HandleSimulate = () =>{
         let newTableData = [];
         let pageFaults = 0;
+        let previousPageFaults=0;
         let componetMemoryState = Array(Frames).fill(null);
+       
 
         for (let i = 0; i < pageRefrences.length; i++) {
                   const page = pageRefrences[i];
@@ -42,6 +46,7 @@ function OptPR()
       if (!componetMemoryState.includes(page)) {
         
         pageFaults++;
+        
         
         if (componetMemoryState.includes(null)) {
           const index = componetMemoryState.indexOf(null);
@@ -56,7 +61,9 @@ function OptPR()
         });
         const index = distances.indexOf(Math.max(...distances));
         componetMemoryState[index] = page;
-      }    
+      }   
+      
+      
 }
 
 newTableData.push({
@@ -108,30 +115,37 @@ return(
     <button onClick={HandleSimulate}>Simulate</button>
 </div>
 <div className="table">
-{tableHeading &&
-      <table className="table" id="myTable">
-        <thead>
-          <tr>
-            <th>Page</th>
-            
-           
-          </tr>
-        </thead>
-        <tbody>
-          {/* This code displays the page numbers and their corresponding frames */}
-          {tableData[0].memory.map((Frame, index) => (
-  <tr key={index}>
-   
-//              
-    
-    <td>Frame {index}</td>
-    {tableData.map((row, rowIndex) => (
-      <td key={rowIndex}>{row.memory[index]}</td>
+<div className="table">
+  {tableHeading && (
+    <table className="table" id="myTable">
+      
+      <thead>
+  <tr>
+    <th>Page</th>
+    {/* This code displays the frame numbers */}
+    {pageRefrences.map((num, index) => (
+      <th key={index}> {num}</th>
     ))}
+    <th>Page Fault</th>
   </tr>
-    ))}
-        </tbody>
-      </table>}
+</thead>
+<tbody>
+
+      
+        {/* This code displays the page numbers and their corresponding frames */}
+        {tableData[0].memory.map((frame, index) => (
+          <tr key={index}>
+            <td>Frame {index}</td>
+            {tableData.map((row, rowIndex) => (
+              <td key={rowIndex}>{row.memory[index]}</td>
+            ))}
+            <td>{tableData[index].pageFaults}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )}
+</div>
 </div>
 
 
