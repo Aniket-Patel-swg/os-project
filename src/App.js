@@ -6,7 +6,8 @@ import SchedulingAlgo from './Pages/SchedulingAlgo.jsx';
 import FCFSNew from './Pages/FCFSNew.jsx';
 import './Css/Homepage.css'
 import Peterson from './Pages/Peterson';
-
+import OptPR from './Pages/OptPR';
+// import FCFSDisk from './Pages/FCFSDisk';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
               <Route path='/peterson' element={<Peterson />} />
              < Route path='/fcfs' element={<FCFSNew />} />
+             <Route path='/OptPR' element={<OptPR />} />
          </Routes>
     </div>
   );
