@@ -1,5 +1,15 @@
-
-
+/* 
+  .critical-section{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15em;
+    height: 8em;
+    position: absolute;
+    top: 5em;
+    left: 8.5in;
+  }
+  .critical-section p{
+    color: white;
+  } */
   .container {
     position: relative;
     width: 100%;
@@ -40,14 +50,62 @@
     }
   }
   .critical-section{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgb(0, 0, 0);
     width: 15em;
-    height: 8em;
+    height: 8.5em;
     position: absolute;
-    top: 2.7em;
+    /* top: 2.7em; */
     left: 8.56in;
     z-index: -1;
+    color:rgb(249, 246, 246);
+    margin-top: 200px;
   }
   .critical-section p{
     color: white;
+  }
+
+  .Remainder-section{
+    background-color:  rgb(147, 197, 219);
+    width: 30em;
+    height: 8.5em;
+    position: absolute;
+    /* top: 2.7em; */
+    margin-top: 200px;
+    left: 11.055in;
+    z-index: -1;
+    color:rgb(12, 12, 12);
+  }
+  .Remainder-section p{
+    color: white;
+  }
+
+  
+  .Entry-section{
+    background-color: rgb(147, 197, 219);
+    width: 85px;
+    height: 8.5em;
+    position: absolute;
+    /* top: 2.7em; */
+    margin-top: 200px;
+    left:7.67in;
+    color: rgb(0, 0, 0);
+    
+    z-index: -1;
+  }
+  .Entry-section p{
+    color: rgb(212, 140, 116);
+  }
+
+  .Simulate{
+    top:37em;
+    position: absolute;
+    left:7.03in;
+    padding: 7px;
+  }
+
+  .exit-cirtical-section{
+    top:42em;
+    position: absolute;
+    left:6.73in;
+    padding: 7px;
   }

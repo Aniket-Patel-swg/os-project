@@ -6,7 +6,7 @@ import SchedulingAlgo from './Pages/SchedulingAlgo.jsx';
 import FCFSNew from './Pages/FCFSNew.jsx';
 import './Css/Homepage.css'
 import Peterson from './Pages/Peterson';
-// import FCFSDisk from './Pages/FCFSDisk';
+
 
 function App() {
   return (
