@@ -143,6 +143,7 @@ const Peterson = () => {
       {/* Check text */}
       <div>
         <h1>Peterson Algorithm  </h1>
+        <p>Some information about peterson algorithm</p>
         <button onClick={() => handleApplyAlgorithms(1)} disabled={ball1InSection || !simulateButtonClicked}>
           <Ball top={ball1Pos.top} left={ball1Pos.left} />
         </button>
