@@ -37,6 +37,7 @@
   
   .table tr:nth-child(even) {
     background-color: #f2f2f2;
+    
   }
   table.table td.pageFault {
     background-color: red;
@@ -44,4 +45,31 @@
 
   .pageFault{
 background-color: red;
+  }
+
+  .misses{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(46, 148, 188);
+  }
+
+  .hits{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: rgb(46, 148, 188);
+
+  }
+
+ 
+.hitRate{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: rgb(46, 148, 188); 
+}
+
+  .totalRef{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: rgb(46, 148, 188);
+  }
+
+  .missrate{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    color: rgb(46, 148, 188); 
   }

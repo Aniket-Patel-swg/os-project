@@ -1,5 +1,15 @@
-
-
+/* 
+  .critical-section{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15em;
+    height: 8em;
+    position: absolute;
+    top: 5em;
+    left: 8.5in;
+  }
+  .critical-section p{
+    color: white;
+  } */
   .container {
     position: relative;
     width: 100%;
