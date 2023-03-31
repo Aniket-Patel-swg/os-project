@@ -18,3 +18,9 @@ video {
 TableContainer {
     background-color: transparent;
 }
+.chart-section{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}

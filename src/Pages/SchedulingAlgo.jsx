@@ -89,6 +89,7 @@ const SchedulingAlgo = () => {
 // }
 
 const Processes = [createData("1", "", "", "", "", "", "", "")];
+const [showGanttChart, setShowGanttchart] = useState(false);
 
 function createData(
   PID,
@@ -110,6 +111,11 @@ function createData(
     Waiting_Time,
     Response_Time,
   };
+}
+
+const handleShowChart = () =>{
+  console.log('check');
+  
 }
 
 const [process, setProcess] = useState(Processes);
@@ -181,7 +187,7 @@ const [process, setProcess] = useState(Processes);
       {/* <Navbar /> */}
       <div className="scheduling-algo-page">
         <div className="video-container">
-          <video src="../video.mp4" autoPlay loop muted></video>
+          {/* <video src="../video.mp4" autoPlay loop muted></video> */}
         </div>
         
         <div className="table-container">
@@ -276,8 +282,24 @@ const [process, setProcess] = useState(Processes);
           <Button variant="contained" style={{ backgroundColor: "#f7404d" }}>
             RESET
           </Button>
+          <Button onClick={() => {setShowGanttchart(!showGanttChart)}}>
+            Show Gantt Chart
+          </Button>
         </Stack>
         </div>
+      </div>
+      <div className="chart-section">
+              {
+                showGanttChart ? (
+                  <div className="show-chart-section">
+                    chart will show here
+                  </div>
+                ) : (
+                  <div className="hide-chart-section">
+                    Chart will not show here
+                  </div>
+                )
+              }
       </div>
     </>
   );
