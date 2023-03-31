@@ -58,33 +58,64 @@ const Peterson = () => {
   return (
     <>
       {/* Check text */}
+      <div className="information-section">
+        <main>
+          <h1>First Come First Serve Disc Scheduling</h1>
+          <p>
+            {" "}
+            FCFS disk scheduling processes disk requests in the order they are
+            received, without any optimization.
+          </p>
+        </main>
+        <div className="info">
+          <h1>Algorithm</h1>
+          <p>
+            <code>
+              set current_head_position = starting_position set
+              total_head_movement = 0 for each request in the queue do: set
+              distance_to_request = abs(request - current_head_position) add
+              distance_to_request to total_head_movement set
+              current_head_position = request print "Total head movement: ",
+              total_head_movement
+            </code>
+          </p>
+        </div>
+        <section>
+          <h2>Scroll Down for Simulation</h2>
+        </section>
+      </div>
       <div className="peterson">
-        <h1>Peterson Algorithm  </h1>
+        <h1>Peterson Algorithm </h1>
         <p>Some information about peterson algorithm</p>
-        <div onClick={() => handleApplyAlgorithms(1)} disabled={ball1InSection || !simulateButtonClicked}>
+        <div
+          onClick={() => handleApplyAlgorithms(1)}
+          disabled={ball1InSection || !simulateButtonClicked}
+        >
           <Ball top={ball1Pos.top} left={ball1Pos.left} />
         </div>
-        <div onClick={() => handleApplyAlgorithms(2)} disabled={ball2InSection || !simulateButtonClicked}>
+        <div
+          onClick={() => handleApplyAlgorithms(2)}
+          disabled={ball2InSection || !simulateButtonClicked}
+        >
           <Ball top={ball2Pos.top} left={ball2Pos.left} />
         </div>
-        <button className="Simulate" onClick={handleSimulate}>Simulate</button>
+        <button className="Simulate" onClick={handleSimulate}>
+          Simulate
+        </button>
       </div>
       {/* <button className="exit-cirtical-section">
       </button> */}
-      <button className="exit-cirtical-section" onClick={handleExitCriticalSection} disabled={!ball1InSection && !ball2InSection}>
+      <button
+        className="exit-cirtical-section"
+        onClick={handleExitCriticalSection}
+        disabled={!ball1InSection && !ball2InSection}
+      >
         Exit Critical Section
       </button>
-      <div className="critical-section">
-        Critical Section
-      </div>
-      <div className="Remainder-section">
-        Remainder Section
-      </div>
-      <div className="Entry-section">
-        Entry Section
-      </div>
-
-</>
-);
+      <div className="critical-section">Critical Section</div>
+      <div className="Remainder-section">Remainder Section</div>
+      <div className="Entry-section">Entry Section</div>
+    </>
+  );
 };
 export default Peterson;
