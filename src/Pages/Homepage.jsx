@@ -12,13 +12,13 @@ const Homepage = () => {
     return ( 
         <>  
         <nav className="navbar">
-        <a href="/"><div><Link to="/home-page">Home</Link></div></a>
+        <a href="/">Home</a>
         <div className="dropdown">
           <a href="/">Algorithms &#9662;</a>
           <div className="dropdown-content">
             <Link to="/SchedulingAlgo">Priority Scheduling</Link>
             <Link to="/Peterson">Peterson's Algorithm</Link>
-            <Link to="/fcfs">FCFS Disk Scheduling</Link>
+            <Link to="/firstcomefirstserve">FCFS Disk Scheduling</Link>
             <Link to="/OptPR">Optimal Page Replacement</Link>
           </div>
         </div>
@@ -36,8 +36,8 @@ const Homepage = () => {
             </div>
             <h1 className='headingr'>Operating System Simulation</h1>
             
-            <div className='para'>
-            <p >CPU scheduling is the process by which the operating system decides which process or task to execute next on a CPU 
+            <div >
+            <p className="os">CPU scheduling is the process by which the operating system decides which process or task to execute next on a CPU 
                 (Central Processing Unit) when multiple processes are competing for the same resource.</p>
             </div>
            
@@ -81,7 +81,7 @@ const Homepage = () => {
                 <h2 className="algo3">First-Come-First Serve disk scheduling algorithm</h2>
                 <p className="para3">FCFS is the simplest disk scheduling algorithm. As the name suggests, this algorithm entertains requests in the order they arrive in the disk queue. The algorithm looks very 
                 fair and there is no starvation (all requests are serviced sequentially) but generally, it does not provide the fastest service.</p>
-                <Link to = "/fcfs"><button className="button3" onClick={handleClick}>Open Simulator</button></Link>
+                <Link to = "/firstcomefirstserve"><button className="button3" onClick={handleClick}>Open Simulator</button></Link>
             </div>
             <div className="img5">
                 <img src="puzzle.png" alt="puzzle"></img>
@@ -101,10 +101,10 @@ const Homepage = () => {
             <h1 className="Teamlist">Our Team:</h1>
             <div className='list'>
             <ul className='row1'>
-                <li>Aniket Patel : 21BCP256</li>
-                <li>Dev Chapatwala : 21BCP266</li>
-                <li>Khushi Desai: 21BCP264</li>
                 <li>Nupur Kapoor : 21BCP255</li>
+                <li>Aniket Patel : 21BCP256</li>
+                <li>Khushi Desai: 21BCP264</li>
+                <li>Dev Chapatwala : 21BCP266</li>
                 <li>Vishwa Nanavati : 21BCP272</li>      
             </ul>
             </div>

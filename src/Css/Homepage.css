@@ -22,7 +22,7 @@ letter-spacing: 0.01em;
 color: rgba(77, 1, 137, 0.87);
 }
 
-.para{
+.os{
 
 position: absolute;
 top: 340px;
@@ -38,8 +38,7 @@ font-size: 26px;
 line-height: 39px;
 text-align: justify;
 text-transform: capitalize;
-
-color: #000000;
+color: black;
 
 }
 
@@ -294,6 +293,7 @@ border-radius: 4px;
     color: #4D0189;
     font-size: 40px;
     font-family: 'Raleway';
+    color: #000;
 }
 
 .Teamlist{

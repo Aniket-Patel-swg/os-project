@@ -16,13 +16,14 @@
     height: 100vh;
   }
   
-  .ball {
+  /* .ball {
     position: absolute;
     top: 50%;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-  }
+    margin-top:170px;
+  } */
   
   .ball.move-left {
     animation: move-left 2s forwards;
@@ -58,7 +59,7 @@
     left: 8.56in;
     z-index: -1;
     color:rgb(249, 246, 246);
-    margin-top: 200px;
+    margin-top: 170px;
   }
   .critical-section p{
     color: white;
@@ -70,7 +71,7 @@
     height: 8.5em;
     position: absolute;
     /* top: 2.7em; */
-    margin-top: 200px;
+    margin-top: 170px;
     left: 11.055in;
     z-index: -1;
     color:rgb(12, 12, 12);
@@ -86,7 +87,7 @@
     height: 8.5em;
     position: absolute;
     /* top: 2.7em; */
-    margin-top: 200px;
+    margin-top: 170px;
     left:7.67in;
     color: rgb(0, 0, 0);
     
@@ -97,17 +98,15 @@
   }
 
   .Simulate{
-    top:37em;
+    top:42em;
     position: absolute;
-    left:7.03in;
+    left:650px;
     padding: 7px;
   }
 
   .exit-cirtical-section{
     top:42em;
     position: absolute;
-    left:6.73in;
+    left:750px;
     padding: 7px;
   }
-
- 
