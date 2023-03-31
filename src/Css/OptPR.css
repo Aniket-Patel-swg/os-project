@@ -1,5 +1,6 @@
 .Heading{
     margin :25px 550px;
+    color:  rgb(242 49 137);
 
 }
 
@@ -49,27 +50,59 @@ background-color: red;
 
   .misses{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(46, 148, 188);
+    color:  rgb(0 121 117);
   }
 
   .hits{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(46, 148, 188);
+    color:  rgb(0 121 117);
 
   }
 
  
 .hitRate{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(46, 148, 188); 
+    color:  rgb(0 121 117);
 }
 
   .totalRef{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(46, 148, 188);
+    color: rgb(0 121 117);
   }
 
   .missrate{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(46, 148, 188); 
+    color: rgb(0 121 117);
   }
+
+   /* table tr td:nth-child(3) {
+    background-color: green;
+  }
+  
+  table tr.increased td:nth-child(3) {
+    background-color: red;
+  }  */
+
+  .red{
+    background-color: red;
+  }
+
+  .green{
+    background-color: green;
+  }
+
+  .Frames{
+    color: rgba(77, 1, 137, 0.87);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .PageRefrences{
+
+    color: rgba(77, 1, 137, 0.87);
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+  }
+
+ 

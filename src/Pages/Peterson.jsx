@@ -58,7 +58,7 @@ const Peterson = () => {
   return (
     <>
       {/* Check text */}
-      <div className="information-section">
+      {/* <div className="information-section">
         <main>
           <h1>First Come First Serve Disc Scheduling</h1>
           <p>
@@ -83,7 +83,7 @@ const Peterson = () => {
         <section>
           <h2>Scroll Down for Simulation</h2>
         </section>
-      </div>
+      </div> */}
       <div className="peterson">
         <h1>Peterson Algorithm </h1>
         <p>Some information about peterson algorithm</p>

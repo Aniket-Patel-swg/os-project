@@ -96,6 +96,7 @@ font-style: normal;
 font-weight: 300;
 font-size: 22px;
 line-height: 40px;
+text-align: justify;
 
 text-transform: capitalize;
 
@@ -140,13 +141,14 @@ color: #000000;
 width: 588px;
 height:158px;
 left: 101px;
-top: 1519px;
+top: 1590px;
 
 font-family: 'Raleway';
 font-style: normal;
 font-weight:300;
 font-size: 22px;
 line-height: 40px;
+text-align: justify;
 
 text-transform:capitalize;
 
@@ -159,7 +161,7 @@ color: #000000;
     width: 251px;
     height: 53px;
     left: 101px;
-    top: 1758px;
+    top: 1800px;
     
     border: 1px solid #000000;
     border-radius: 4px;
@@ -190,13 +192,14 @@ color: #000000;
     width: 628px;
     height: 119px;
     left: 760px;
-    top: 2027px;
+    top: 2100px;
     
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
     line-height: 40px;
+    text-align: justify;
    
     
     text-transform: capitalize;
@@ -212,7 +215,7 @@ color: #000000;
     width: 251px;
     height: 53px;
     left: 776px;
-    top: 2276px;
+    top: 2350px;
     
     border: 1px solid #000000;
     border-radius: 4px;
@@ -244,13 +247,14 @@ color: #000000;
 width: 588px;
 height: 158px;
 left: 82px;
-top: 2540px;
+top: 2600px;
 
 font-family: 'Raleway';
 font-style: normal;
 font-weight: 300;
 font-size: 22px;
 line-height: 40px;
+text-align: justify;
 
 text-transform: capitalize;
 
@@ -265,12 +269,86 @@ position: absolute;
 width: 251px;
 height: 53px;
 left: 80px;
-top: 2800px;
+top: 2850px;
 
 border: 1px solid #000000;
 border-radius: 4px;
 
 }
+
+.separator {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    position: absolute;
+    width: 100%;
+    top: 2950px;
+  }
+  
+
+.Team{
+position: absolute;
+width: 100%;
+height: 100%;
+top: 2960px;
+text-decoration-line: underline;
+color: #4D0189;
+font-size: 40px;
+font-family: 'Raleway';
+}
+
+.Nupur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3100px;
+    font-size: 25px;
+    font-family: 'Raleway';
+}
+
+.Aniket{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3150px;
+    font-size: 25px;
+    font-family: 'Raleway';
+}
+
+.Khushi{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3200px;
+    font-size: 25px;
+    font-family: 'Raleway';
+}
+
+.Dev{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3250px;
+    font-size: 25px;
+    font-family: 'Raleway';
+}
+
+.Vishwa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 3300px;
+    font-size: 25px;
+    font-family: 'Raleway';
+}
+.separator2 {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    position: absolute;
+    width: 100%;
+    top: 3400px;
+  }
 
 .img1{
     position: absolute;
@@ -314,3 +392,39 @@ height: 442px;
 left: 720px;
 top: 2441px;
 }
+
+
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+    background-color: #333;
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the active link */
+  nav a.active {
+    background-color: #4CAF50;
+  }
+  
+  
+  
+  

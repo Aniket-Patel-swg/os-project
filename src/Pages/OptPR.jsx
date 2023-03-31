@@ -1,6 +1,7 @@
 //importing necessary modules and css file
 import React, { useState } from "react";
 import "../Css/OptPR.css";
+
 //Defining the functional Component
 function OptPR() {
   //intializing state variables using useState hooks
@@ -10,8 +11,10 @@ function OptPR() {
   const [pageFaults, setPageFaults] = useState(0);
   const [color, setColor] = useState(null);
   const [tableData, setTableData] = useState([]);
-  const [tableHeading, setTableHeading] = useState(false);
-  const [pageFaultParagraph, setPageFaultParagraph] = useState(false);
+  const [tableHeading, setTableHeading] = useState(false)
+  const [pageFaultParagraph, setPageFaultParagraph] = useState(false)
+ 
+
 
   //function to handle page refrence string taken as input
   const HandlePageRefrences = (event) => {
@@ -41,128 +44,121 @@ function OptPR() {
         //page not in frame,page fault occurs
 
         pageFaults++;
-
+        
+        
+        
         // if there is an empty frame,page added to frame,
         if (componetMemoryState.includes(null)) {
           const index = componetMemoryState.indexOf(null);
-          componetMemoryState[index] = page;
-        }
-        //if all frames occupied,page with maximum distance to next occurence is replaced
-        else {
-          let distances = componetMemoryState.map((Frame) => {
-            const remainingPages = pageRefrences.slice(i + 1); //a subarray of remaining pages
-            const nextIndex = remainingPages.indexOf(Frame);
-            return nextIndex === -1 ? Infinity : nextIndex;
-          });
-          const index = distances.indexOf(Math.max(...distances));
-          componetMemoryState[index] = page;
-        }
-      }
-      //Adding the page,page fault count and component memory state  to table data array
-      newTableData.push({
-        page: page,
-        pageFault: pageFaults,
-        memory: [...componetMemoryState],
-      });
+          componetMemoryState[index] = page;     
     }
-    //updating state variables aftter simulation
-    setPageFaults(pageFaults);
+    //if all frames occupied,page with maximum distance to next occurence is replaced
+    else {
+        let distances = componetMemoryState.map((Frame) => {
+          const remainingPages = pageRefrences.slice(i + 1);//a subarray of remaining pages
+          const nextIndex = remainingPages.indexOf(Frame);
+          return nextIndex === -1 ? Infinity : nextIndex;
+         
+        });
+        const index = distances.indexOf(Math.max(...distances));
+        componetMemoryState[index] = page;
+      }   
+      
+      
+}
+
+
+//Adding the page,page fault count and component memory state  to table data array
+newTableData.push({
+    page: page,
+    pageFault: pageFaults,
+    memory: [...componetMemoryState],
+  });
+
+
+        }
+//updating state variables aftter simulation
+     setPageFaults(pageFaults);
     SetComponentMemoryState(componetMemoryState);
     setTableData(newTableData);
-    setTableHeading(true);
-    setPageFaultParagraph(true);
-  };
+    setTableHeading(true)
+    setPageFaultParagraph(true)
+    }
 
-  return (
-    //displaying the page
-    <>
-      <div className="information-section">
-        <main>
-          <h1>First Come First Serve Disc Scheduling</h1>
-          <p>
-            {" "}
-            FCFS disk scheduling processes disk requests in the order they are
-            received, without any optimization.
-          </p>
-        </main>
-        <div className="info">
-          <h1>Algorithm</h1>
-          <p>
-            <code>
-              set current_head_position = starting_position set
-              total_head_movement = 0 for each request in the queue do: set
-              distance_to_request = abs(request - current_head_position) add
-              distance_to_request to total_head_movement set
-              current_head_position = request print "Total head movement: ",
-              total_head_movement
-            </code>
-          </p>
-        </div>
-        <section>
-          <h2>Scroll Down for Simulation</h2>
-        </section>
-      </div>
-      <div className="Heading">
-        <h1>Optimal Page Replacement</h1>
-      </div>
-      <div className="Frames">
-        <label>
-          Number of Frames :
-          <input
-            type="Number"
-            value={Frames}
-            defaultValue={1}
-            onChange={HandleFrames}
-          ></input>
-        </label>
-      </div>
-      <div className="PageRefrences">
-        <label>
-          Reference String :
-          <input
-            type="Text"
-            min="1"
-            defaultValue={1}
-            onChange={HandlePageRefrences}
-          ></input>
-        </label>
-      </div>
-      <div className="btn">
-        <button onClick={HandleSimulate}>Simulate</button>
-      </div>
-      <div className="table">
-        <div className="table">
-          {tableHeading && (
-            <table className="table" id="myTable">
-              <thead>
-                <tr>
-                  <th>Page</th>
-                  {/* This code displays the frame numbers */}
-                  {pageRefrences.map(
-                    (
-                      num,
-                      index //to display page refrences in table
-                    ) => (
-                      <th key={index}> {num}</th> //key to identify each element in the list
-                    )
-                  )}
-                  {/* <th>Page Fault</th> */}
-                </tr>
-              </thead>
-              <tbody>
-                {/* This code displays the page numbers and their corresponding frames */}
-                {tableData[0].memory.map((frame, index) => (
-                  <tr key={index}>
-                    <td>Frame {index}</td>
-                    {tableData.map((row, rowIndex) => (
-                      <td key={rowIndex}>{row.memory[index]}</td>
-                    ))}
-                    {/* <td>{tableData[index].pageFaults}</td> */}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+   
+
+return( //displaying the page
+ <>
+
+ 
+
+
+<div className="Heading" ><h1>Optimal Page Replacement</h1></div>
+<div className="Frames">
+    <label>
+        Number of Frames : 
+        <input
+          type="Number"
+           value={Frames} defaultValue={1}
+          onChange={HandleFrames}
+        ></input>
+        
+      </label>
+    
+</div>
+<div className="PageRefrences">
+    <label>
+        Reference String : 
+        <input
+          type="Text"
+          min="1" defaultValue={1}
+          onChange={HandlePageRefrences}
+        ></input>
+        
+      </label>
+    
+</div>
+<div className="btn">
+    <button onClick={HandleSimulate}>Simulate</button>
+</div>
+<div className="table">
+<div className="table">
+  {tableHeading && (
+    <table className="table" id="myTable">
+      
+      <thead>
+  <tr>
+    <th>Page</th>
+    {/* This code displays the frame numbers */}
+    {pageRefrences.map((num, index) => ( //to display page refrences in table
+      <th key={index}> {num}</th>//key to identify each element in the list
+    ))}
+    {/* <th>Page Fault</th> */}
+  </tr>
+</thead>
+<tbody>
+
+      
+        {/* This code displays the page numbers and their corresponding frames */}
+        {tableData[0].memory.map((frame, index) => (
+          <tr key={index}>
+            <td>Frame {index}</td>
+            {tableData.map((row, rowIndex) => (
+              <td key={rowIndex} className={
+          row.pageFault > tableData[rowIndex - 1]?.pageFault // check if page fault increased
+            ? "red"
+            : "green"
+            
+        }
+        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: "red" } : {}}>{row.memory[index]}</td> //add ternary here
+
+            ))}
+            {/* <td>{tableData[index].pageFaults}</td> */}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )}
 
           <br></br>
           {/* diplaying final results */}
