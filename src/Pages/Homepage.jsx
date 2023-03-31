@@ -2,31 +2,34 @@ import React from "react";
 import '../Css/Homepage.css';
 import { useRef } from "react";
 
-
-// import Navbar from "./Navbar.jsx";
-// import Team from "./Team";
 import { Link } from "react-router-dom";
 
 const Homepage = () => {
     const handleClick = () => {
         // define what happens when the button is clicked
     };
-    const teamRef = useRef(null);
-  
-    const handleTeamClick = () => {
-      teamRef.current.scrollIntoView({ behavior: "smooth" });
-    };
+    
     return ( 
         <>  
-           <nav className="navbar">
-        <a href="/">Home</a>
-        <a href="/">Algorithms</a>
-        <a href="" ref={teamRef} onClick={handleTeamClick} >Team</a>
+        <nav className="navbar">
+        <a href="/"><div><Link to="/home-page">Home</Link></div></a>
+        <div className="dropdown">
+          <a href="/">Algorithms &#9662;</a>
+          <div className="dropdown-content">
+            <Link to="/SchedulingAlgo">Priority Scheduling</Link>
+            <Link to="/Peterson">Peterson's Algorithm</Link>
+            <Link to="/fcfs">FCFS Disk Scheduling</Link>
+            <Link to="/OptPR">Optimal Page Replacement</Link>
+          </div>
+        </div>
+
+        <a href="#Team">Team</a>
         <img src="logo.png" alt="Logo" />
       </nav>
 
 
-                <div className="home-page">
+            
+            <div className="home-page">
            <div>
            <div className="img1">
                 <img src="Scientist.png" alt="scientist"></img>
@@ -93,14 +96,20 @@ const Homepage = () => {
 
             <div className="separator"></div>
             <div className="separator2"></div>
-            <div ref={teamRef}>
-          <section id="Team">
-            <h2 className="Team">Our Team:</h2>
-            <p className="Nupur">Nupur Kapoor : 21BCP255</p>
-            <p className="Aniket">Aniket Patel : 21BCP256</p>
-            <p className="Khushi">Khushi Desai : 21BCP264</p>
-            <p className="Dev">Dev Chapatwala : 21BCP266</p>
-            <p className="Vishwa">Vishwa Nanavati : 21BCP272</p>
+          <div className="Team" id="Team">  
+          <section>
+            <h1 className="Teamlist">Our Team:</h1>
+            <div className='list'>
+            <ul className='row1'>
+                <li>Aniket Patel : 21BCP256</li>
+                <li>Dev Chapatwala : 21BCP266</li>
+                <li>Khushi Desai: 21BCP264</li>
+                <li>Nupur Kapoor : 21BCP255</li>
+                <li>Vishwa Nanavati : 21BCP272</li>      
+            </ul>
+            </div>
+
+            
           </section>
         </div>
 

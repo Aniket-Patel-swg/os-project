@@ -153,7 +153,7 @@ return( //displaying the page
             : "green"
             
         }
-        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: "red" } : {}}>{row.memory[index]}</td> //add ternary here
+        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: "rgb(255, 182, 182)" } : {}}>{row.memory[index]}</td> //add ternary here
 
             ))}
             {/* <td>{tableData[index].pageFaults}</td> */}
