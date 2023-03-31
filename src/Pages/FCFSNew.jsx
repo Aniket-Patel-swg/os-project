@@ -1,7 +1,18 @@
 
 import React, { useState } from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,Pie, PieChart, Legend, ResponsiveContainer } from 'recharts';
-import '../Css/Fcfs.css'
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Pie,
+  PieChart,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import "../Css/Fcfs.css";
 
 function DynamicTable() {
   const [headPosition, setHeadPosition] = useState("");
@@ -12,7 +23,6 @@ function DynamicTable() {
   const [totalSeekTime, setTotalSeekTime] = useState(0);
   const [trackData, setTrackData] = useState(0);
   const [numTracks, setNumTracks] = useState(0);
-
 
   const handleHeadPositionChange = (event) => {
     setHeadPosition(event.target.value);
@@ -30,7 +40,7 @@ function DynamicTable() {
     const headData = Math.abs(event.target.value);
     newData[index][event.target.name] = event.target.value;
     setHeadPosition(headData);
-    setData(newData); 
+    setData(newData);
   };
 
   const handleAddRow = () => {
@@ -39,86 +49,130 @@ function DynamicTable() {
     console.log(setHeadPosition);
     const headData = Math.abs(inputValue);
     if (data.length < numTracks) {
-      setData([...data, { data: "" , headPosition : headPosition, requst:`req${i++}` }]);
-    }
-    else{
-      alert('Given number of tracks is not enough')
+      setData([
+        ...data,
+        { data: "", headPosition: headPosition, requst: `req${i++}` },
+      ]);
+    } else {
+      alert("Given number of tracks is not enough");
     }
   };
-  
 
   const handleSimulate = () => {
     console.log(data);
   };
 
   const handleShowSeekTime = () => {
+    if (data.length < 2) {
+      console.error("Data array should have at least two elements");
+      return;
+    }
+    console.log(data);
     let seekTime = 0;
-    for (let i = 1; i < data.length ; i++) {
-      const prevHeadPosition = parseInt(data[i].headPosition);
-      const currentHeadPosition = parseInt(data[i+1].headPosition);
+    // This function will calculate
+    for (let i = 1; i < data.length; i++) {
+      const prevHeadPosition = parseInt(data[i - 1].headPosition);
+      const currentHeadPosition = parseInt(data[i].headPosition);
       seekTime += Math.abs(currentHeadPosition - prevHeadPosition);
     }
     setTotalSeekTime(seekTime);
-    console.log(seekTime);
 
-    let showField = document.getElementById('seek-time')
+    let showField = document.getElementById("seek-time");
     showField.textContent = seekTime;
   };
-  const handleTrackDataChange = (event) =>{
+  const handleTrackDataChange = (event) => {
     const trackDataByuser = event.target.value;
     setTrackData(trackDataByuser);
     console.log(trackDataByuser);
     setNumTracks(trackDataByuser);
 
-    let trackdiv = document.getElementById('track-number');
+    let trackdiv = document.getElementById("track-number");
     trackdiv.textContent = trackDataByuser;
-  }
+  };
 
   let i = 0;
   return (
     <>
-    <div className="fcfs">
-      <label>
-       Initial Head Position:
-        <input
-          type="text"
-          value={inputValue} onChange={handleInputChange} disabled={isDisabled}
-        />
-      </label>
-      <table>
-        <thead>
-          <tr>
-            <th>Request ID</th>
-            <th>Data</th>
-            <th>Head Position</th>
-          </tr>
-        </thead>
-        <tbody>
-      {data.slice(0, numTracks).map((row, index) => (
-        <tr key={index}>
-            <td>request{i++}</td>
-          <td>
-            <input
-              type="text"
-              name="data"
-              value={row.data}
-              onChange={(event) => handleDataChange(event, index)}
-            />
-          </td>
-          <td>{row.headPosition}</td>
-        </tr>
-      ))}
-    </tbody>
+      <div className="information-section">
+        <main>
+          <h1>First Come First Serve Disc Scheduling</h1>
+          <p> FCFS disk scheduling processes disk requests in the order they are received, without any optimization.</p>
+        </main>
+        <div className="info">
+          <h1>Algorithm</h1>
+          <p>
+              <code>
+              set current_head_position = starting_position
+set total_head_movement = 0
 
-      </table>
-      <input type="number" name="track" onChange={handleTrackDataChange} placeholder="Enter number of tracks" disabled={trackDisabled} />
-      <button onClick={handleAddRow}>Add Row</button>
-      <button onClick={handleSimulate}>Show output</button>
-      <button onClick={handleShowSeekTime}>Show seek time</button>
-      <div>Total seek time is : <p id="seek-time">{handleShowSeekTime}</p> </div>
-      <div>Selected Number of tracks is : <p id="track-number"></p></div>
-    </div>
-    <ResponsiveContainer width="100%" height="500%" aspect={3}>
+for each request in the queue do:
+    set distance_to_request = abs(request - current_head_position)
+    add distance_to_request to total_head_movement
+    set current_head_position = request
+    
+print "Total head movement: ", total_head_movement
+
+              </code>
+          </p>
+        </div>
+        <section>
+          <h2>Scroll Down for Simulation</h2>
+        </section>
+      </div>
+      <div className="fcfs">
+        <label>
+          Initial Head Position:
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            disabled={isDisabled}
+          />
+        </label>
+        <table>
+          <thead>
+            <tr>
+              <th>Request ID</th>
+              <th>Data</th>
+              <th>Head Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.slice(0, numTracks).map((row, index) => (
+              <tr key={index}>
+                <td>request{i++}</td>
+                <td>
+                  <input
+                    type="text"
+                    name="data"
+                    value={row.data}
+                    onChange={(event) => handleDataChange(event, index)}
+                  />
+                </td>
+                <td>{row.headPosition}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <input
+          type="number"
+          name="track"
+          onChange={handleTrackDataChange}
+          placeholder="Enter number of tracks"
+          disabled={trackDisabled}
+        />
+        <button onClick={handleAddRow}>Add Row</button>
+        {/* <button onClick={handleSimulate}>Show output</button> */}
+        <button onClick={handleShowSeekTime}>Show seek time</button>
+        <div>
+          Total seek time is : <p id="seek-time">{handleShowSeekTime}</p>{" "}
+        </div>
+        <div>
+          Selected Number of tracks is : <p id="track-number"></p>
+        </div>
+      </div>
+      <div className="chart-container">
+      <ResponsiveContainer width="100%" height="500%" aspect={3}>
         <LineChart
           width={500}
           height={300}
@@ -135,10 +189,31 @@ function DynamicTable() {
           <YAxis />
           <Tooltip />
           <Legend />
-          {/* <Line type="monotone" dataKey="data" stroke="#8884d8" strokeDasharray="5 5" /> */}
-          <Line type="monotone" dataKey = "data" stroke="#8884d8" />
+          <Line type="monotone" dataKey="data" stroke="#8884d8" />
         </LineChart>
       </ResponsiveContainer>
+      {/* <ResponsiveContainer width="100%" height="100%" aspect={3}>
+        <LineChart
+          layout="vertical"
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis type="request" dataKey="requst" domain={[0, 'dataMax + 1000']} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line dataKey="data" type="monotone" stroke="#8884d8" />
+        </LineChart>
+      </ResponsiveContainer> */}
+      </div>
     </>
   );
 }
