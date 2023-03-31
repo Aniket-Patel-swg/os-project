@@ -113,73 +113,108 @@ const [process, setProcess] = useState(Processes);
   return (
     <>
       {/* <Navbar /> */}
+      <div className="information-section">
+        <main>
+          <h1>First Come First Serve Disc Scheduling</h1>
+          <p>
+            {" "}
+            FCFS disk scheduling processes disk requests in the order they are
+            received, without any optimization.
+          </p>
+        </main>
+        <div className="info">
+          <h1>Algorithm</h1>
+          <p>
+            <code>
+              set current_head_position = starting_position set
+              total_head_movement = 0 for each request in the queue do: set
+              distance_to_request = abs(request - current_head_position) add
+              distance_to_request to total_head_movement set
+              current_head_position = request print "Total head movement: ",
+              total_head_movement
+            </code>
+          </p>
+        </div>
+        <section>
+          <h2>Scroll Down for Simulation</h2>
+        </section>
+      </div>
       <div className="scheduling-algo-page">
         {/* <div className="video-container">
           <video src="../video.mp4" autoPlay loop muted></video>
         </div> */}
         
         <div className="table-container">
-        <TableContainer component={Paper}>
-          <Table aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">Process ID</TableCell>
-                <TableCell align="center">Priority</TableCell>
-                <TableCell align="center">Arrival Time(AT)</TableCell>
-                <TableCell align="center">Brust Time(BT)</TableCell>
-                <TableCell align="center">Completion Time(CT)</TableCell>
-                <TableCell align="center">Turn Around Time(TAT)</TableCell>
-                <TableCell align="center">Waiting Time(WT)</TableCell>
-                <TableCell align="center">Response Time(RT)</TableCell>
-                <TableCell align="center">Delete Process</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {process.map((row, index) => (
-                <TableRow
-                  key={row.id}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell align="center" name="processID">
-                    {row.PID}
-                  </TableCell>
-                  <TableCell align="center">
-                    <TextField
-                    //   hiddenLabel
-                    //   name="priority"
-                      id="filled-hidden-label-small"
-                      variant="filled"
-                      size="small"
-                      onChange={(e) => priority(e,index)}
-                    />
-                  </TableCell>
-                  <TableCell align="center">
-                    <TextField
-                    //   hiddenLabe
-                    //   name="arrivalTime"
-                      id="filled-hidden-label-small"
-                      variant="filled"
-                      size="small"
-                      onChange={(e) => arrivalTime(e,index)}
-                    />
-                  </TableCell>
-                  <TableCell align="center">
-                    <TextField
-                      hiddenLabel
-                    //   name="burstTime"
-                      id="filled-hidden-label-small"
-                      variant="filled"
-                      size="small"
-                      onChange={(e) => {burstTime(e,index)}}
-                    />
-                  </TableCell>
-                  <TableCell align="center">{row.Completion_Time}</TableCell>
-                  <TableCell align="center">{row.TurnAround_Time}</TableCell>
-                  <TableCell align="center">{row.Waiting_Time}</TableCell>
-                  <TableCell align="center">{row.Response_Time}</TableCell>
-                  <TableCell align="center">
-                    {row.del_process}
-                    <IconButton aria-label="delete" onClick={() => deleteProcess(row.PID)}>
+          <TableContainer component={Paper}>
+            <Table aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">Process ID</TableCell>
+                  <TableCell align="center">Process ID</TableCell>
+                  <TableCell align="center">Priority</TableCell>
+                  <TableCell align="center">Arrival Time(AT)</TableCell>
+                  <TableCell align="center">Brust Time(BT)</TableCell>
+                  <TableCell align="center">Completion Time(CT)</TableCell>
+                  <TableCell align="center">Turn Around Time(TAT)</TableCell>
+                  <TableCell align="center">Waiting Time(WT)</TableCell>
+                  <TableCell align="center">Response Time(RT)</TableCell>
+                  <TableCell align="center">Delete Process</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {process.map((row, index) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell align="center" name="processID">
+                      {row.PID}
+                    </TableCell>
+                    <TableCell align="center" name="processID">
+                      p{PID++}
+                    </TableCell>
+                    <TableCell align="center">
+                      <TextField
+                        //   hiddenLabel
+                        //   name="priority"
+                        id="filled-hidden-label-small"
+                        variant="filled"
+                        size="small"
+                        onChange={(e) => priority(e, index)}
+                      />
+                    </TableCell>
+                    <TableCell align="center">
+                      <TextField
+                        //   hiddenLabe
+                        //   name="arrivalTime"
+                        id="filled-hidden-label-small"
+                        variant="filled"
+                        size="small"
+                        onChange={(e) => arrivalTime(e, index)}
+                      />
+                    </TableCell>
+                    <TableCell align="center">
+                      <TextField
+                        hiddenLabel
+                        //   name="burstTime"
+                        id="filled-hidden-label-small"
+                        variant="filled"
+                        size="small"
+                        onChange={(e) => {
+                          burstTime(e, index);
+                        }}
+                      />
+                    </TableCell>
+                    <TableCell align="center">{row.Completion_Time}</TableCell>
+                    <TableCell align="center">{row.TurnAround_Time}</TableCell>
+                    <TableCell align="center">{row.Waiting_Time}</TableCell>
+                    <TableCell align="center">{row.Response_Time}</TableCell>
+                    <TableCell align="center">
+                      {row.del_process}
+                      <IconButton
+                        aria-label="delete"
+                        onClick={() => deleteProcess(row.PID)}
+                      >
                         <DeleteIcon />
                     </IconButton>
                   </TableCell>
@@ -210,11 +245,31 @@ const [process, setProcess] = useState(Processes);
           </Button>
         </Stack>
         </div>
-        <div className="gantt-section">
-          Gantt chart : 
-          <div className="chart-section">
-                check here : 
-          </div>
+      </div>
+      <div className="chart">
+        here chart will show
+        <div id="chart-section">
+          {ganttArray.map((dataItem, index) => (
+            <>
+              {/* <div key={index}>p{dataItem}</div> */}
+              <Box
+                component="span"
+                sx={{ position: "relative", p: 2, border: "1px dashed grey" }}
+              >
+                <Button>p{dataItem}</Button>
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: "50px",
+                    left: "1px",
+                  }}
+                >
+                  {ganttIndex++}
+                </span>
+              </Box>
+            </>
+          ))}
+          {ganttIndex}
         </div>
       </div>
     </>

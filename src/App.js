@@ -18,7 +18,7 @@ function App() {
               <Route path='/SchedulingAlgo' element = {<SchedulingAlgo />}/>
               {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
               <Route path='/peterson' element={<Peterson />} />
-             < Route path='/fcfs' element={<FCFSNew />} />
+             < Route path='/firstcomefirstserve' element={<FCFSNew />} />
              <Route path='/OptPR' element={<OptPR />} />
              <Route path='/Info' element={<Info />} />
          </Routes>

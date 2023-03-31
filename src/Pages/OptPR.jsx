@@ -3,12 +3,11 @@ import React, { useState } from "react";
 import "../Css/OptPR.css";
 
 //Defining the functional Component
-function OptPR()
-{
-    //intializing state variables using useState hooks
-    const [pageRefrences,SetpageRefrences] = useState([]);
-    const [Frames,SetFrames] = useState(0);
-    const [componetMemoryState,SetComponentMemoryState] = useState([]);
+function OptPR() {
+  //intializing state variables using useState hooks
+  const [pageRefrences, SetpageRefrences] = useState([]);
+  const [Frames, SetFrames] = useState(0);
+  const [componetMemoryState, SetComponentMemoryState] = useState([]);
   const [pageFaults, setPageFaults] = useState(0);
   const [color, setColor] = useState(null);
   const [tableData, setTableData] = useState([]);
@@ -17,35 +16,33 @@ function OptPR()
  
 
 
-    //function to handle page refrence string taken as input
-    const HandlePageRefrences = (event) =>{
+  //function to handle page refrence string taken as input
+  const HandlePageRefrences = (event) => {
+    const refrenceString = event.target.value //converting string to array
+      .split("")
+      .map((reference) => parseInt(reference.trim()))
+      .filter((reference) => !isNaN(reference));
+    SetpageRefrences(refrenceString);
+  };
+  //function to handle changes in number of frames
+  const HandleFrames = (event) => {
+    const Frames = parseInt(event.target.value);
+    SetFrames(Frames);
+    SetComponentMemoryState(Array(Frames).fill(null));
+  };
+  //handling the simulate button
+  const HandleSimulate = () => {
+    let newTableData = [];
+    let pageFaults = 0;
+    let componetMemoryState = Array(Frames).fill(null);
 
-        const refrenceString = event.target.value //converting string to array
-        .split("")
-        .map((reference) => parseInt(reference.trim()))
-        .filter((reference) => !isNaN(reference));
-        SetpageRefrences(refrenceString);
-    }
-    //function to handle changes in number of frames
-    const HandleFrames = (event) => {
+    //looping page refrence array
+    for (let i = 0; i < pageRefrences.length; i++) {
+      const page = pageRefrences[i];
 
-        const Frames = parseInt(event.target.value);
-        SetFrames(Frames);
-       SetComponentMemoryState(Array(Frames).fill(null));
+      if (!componetMemoryState.includes(page)) {
+        //page not in frame,page fault occurs
 
-    }
-    //handling the simulate button
-    const HandleSimulate = () =>{
-        let newTableData = [];
-        let pageFaults = 0;
-        let componetMemoryState = Array(Frames).fill(null);
-       
-        //looping page refrence array
-        for (let i = 0; i < pageRefrences.length; i++) {
-                  const page = pageRefrences[i];
-
-      if (!componetMemoryState.includes(page)) { //page not in frame,page fault occurs
-        
         pageFaults++;
         
         
@@ -163,40 +160,40 @@ return( //displaying the page
     </table>
   )}
 
-<br></br>
-{/* diplaying final results */}
-<div className="totalRef">
-  <h3>The total number of refrences are: {pageRefrences.length} </h3>
-</div>
-  <br></br>
+          <br></br>
+          {/* diplaying final results */}
+          <div className="totalRef">
+            <h3>The total number of refrences are: {pageRefrences.length} </h3>
+          </div>
+          <br></br>
 
-  <div className="misses">
-    <h3>The number of misses are: {pageFaults} </h3>
-  </div>
-    <br></br>
-  <div className="hits">
-    <h3>The number of hits are: {pageRefrences.length-pageFaults}</h3>
-  </div>
-  <br></br>
+          <div className="misses">
+            <h3>The number of misses are: {pageFaults} </h3>
+          </div>
+          <br></br>
+          <div className="hits">
+            <h3>The number of hits are: {pageRefrences.length - pageFaults}</h3>
+          </div>
+          <br></br>
 
-
-  <div className="hitRate">
-    <h3>The Hit Rate is : {(pageRefrences.length-pageFaults)*100/pageRefrences.length} %</h3>
-  </div>
-  <br></br>
-  <div className="missrate">
-    <h3>The Miss Rate is : {(pageFaults)*100/pageRefrences.length} % </h3>
-  </div>
-
-</div>
-</div>
-
-
-</>
-);
-
-}; 
+          <div className="hitRate">
+            <h3>
+              The Hit Rate is :{" "}
+              {((pageRefrences.length - pageFaults) * 100) /
+                pageRefrences.length}{" "}
+              %
+            </h3>
+          </div>
+          <br></br>
+          <div className="missrate">
+            <h3>
+              The Miss Rate is : {(pageFaults * 100) / pageRefrences.length} %{" "}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
 
 export default OptPR;
-
-

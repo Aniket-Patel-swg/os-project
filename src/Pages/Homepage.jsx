@@ -78,7 +78,7 @@ const Homepage = () => {
                 <h2 className="algo3">First-Come-First Serve disk scheduling algorithm</h2>
                 <p className="para3">FCFS is the simplest disk scheduling algorithm. As the name suggests, this algorithm entertains requests in the order they arrive in the disk queue. The algorithm looks very 
                 fair and there is no starvation (all requests are serviced sequentially) but generally, it does not provide the fastest service.</p>
-                <Link to = "/fcfs"><button className="button3" onClick={handleClick}>Open Simulator</button></Link>
+                <Link to = "/firstcomefirstserve"><button className="button3" onClick={handleClick}>Open Simulator</button></Link>
             </div>
             <div className="img5">
                 <img src="puzzle.png" alt="puzzle"></img>

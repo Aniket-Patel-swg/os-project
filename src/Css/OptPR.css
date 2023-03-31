@@ -91,12 +91,6 @@ background-color: red;
     background-color: green;
   }
 
-  body {
-    background-image: url("image4.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   .Frames{
     color: rgba(77, 1, 137, 0.87);
     font-size: large;
