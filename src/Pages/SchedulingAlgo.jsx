@@ -19,10 +19,8 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 
 const SchedulingAlgo = () => {
-  const Processes = [createData("1", "", "", "", "", "", "", "")];
-  const [ganttArray, setGanttArray] = useState([]);
-  let ganttIndex = 0;
-  let PID = 0;
+
+const Processes = [createData("1", "", "", "", "", "", "", "")];
 
   function createData(
     PID,
@@ -46,7 +44,7 @@ const SchedulingAlgo = () => {
     };
   }
 
-  const [process, setProcess] = useState(Processes);
+const [process, setProcess] = useState(Processes);
   //Add Process
   const addProcess = () => {
     let pid = Math.floor(100 * Math.random());
@@ -88,7 +86,7 @@ const SchedulingAlgo = () => {
   // const priorityPreemptive = require("../models/CPUScheduling");
 
   //Result
-  const Result = async (process) => {
+  const Result = async () => {
     // console.log(priorityScheduling(process));
     // let data = process;
     // const res = await axios.post("http://localhost:4000/schedule", {data : [...process]});
@@ -98,30 +96,14 @@ const SchedulingAlgo = () => {
         process: [...process],
       });
       const myData = data.data.process;
-      const chartData = data.data.ganttAraay;
+      const ganttData = data.data.ganttArray;
       setProcess(myData);
       console.log({ chartData });
       setGanttArray(chartData);
       console.log(myData);
-
-      // let chartSection = document.getElementById('chart-section');
-      // chartSection.textContent += chartData;
-
-      // let chartSection = document.getElementById('chart-section');
-      // chartSection.innerHTML = '';
-      // chartData.map((item, index) => {
-      //   const li = document.createElement('li');
-      //   li.innerText = item;
-      //   chartSection.appendChild(li);
-      // });
-
-      //   let chartSection = document.getElementById('chart-section');
-      // chartSection.innerHTML = ""; // clear existing content
-      // chartData.forEach((dataItem) => {
-      //   let listItem = document.createElement("li");
-      //   listItem.innerText = dataItem;
-      //   chartSection.appendChild(listItem);
-      // });
+      console.log(ganttData);
+      let chartSection = document.getElementById('chart-section');
+      chartSection.textContent = ganttData;
     } catch (err) {
       console.log(err);
     }
@@ -161,7 +143,7 @@ const SchedulingAlgo = () => {
         {/* <div className="video-container">
           <video src="../video.mp4" autoPlay loop muted></video>
         </div> */}
-
+        
         <div className="table-container">
           <TableContainer component={Paper}>
             <Table aria-label="simple table">
@@ -234,40 +216,34 @@ const SchedulingAlgo = () => {
                         onClick={() => deleteProcess(row.PID)}
                       >
                         <DeleteIcon />
-                      </IconButton>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Stack
-            spacing={2}
-            direction="row"
-            style={{ justifyContent: "center", padding: "10em" }}
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Stack
+          spacing={2}
+          direction="row"
+          style={{ justifyContent: "center", padding: "10em" }}
+        >
+          <Button
+            variant="contained"
+            style={{ backgroundColor: "#343536" }}
+            onClick={() => {
+              addProcess();
+            }}
           >
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "#343536" }}
-              onClick={() => {
-                addProcess();
-              }}
-            >
-              ADD PROCESS
-            </Button>
-            <Button variant="contained" onClick={() => Result(process)}>
-              RESULT
-            </Button>
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "#f7404d" }}
-              onClick={() => {
-                window.location.reload();
-              }}
-            >
-              RESET
-            </Button>
-          </Stack>
+            ADD PROCESS
+          </Button>
+          <Button variant="contained"
+          onClick={()=>Result()}
+          >RESULT</Button>
+          <Button variant="contained" style={{ backgroundColor: "#f7404d" }} onClick={()=> window.location.reload()}>
+            RESET
+          </Button>
+        </Stack>
         </div>
       </div>
       <div className="chart">
