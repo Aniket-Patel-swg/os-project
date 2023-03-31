@@ -22,14 +22,14 @@ letter-spacing: 0.01em;
 color: rgba(77, 1, 137, 0.87);
 }
 
-.para{
+.something{
 
 position: absolute;
 top: 340px;
 left: 80px;
 height: 200px;
 width: 400px;
-
+color: #000;
 
 font-family:'Raleway';
 font-style: normal;
@@ -39,7 +39,6 @@ line-height: 39px;
 text-align: justify;
 text-transform: capitalize;
 
-color: #000000;
 
 }
 
@@ -304,6 +303,7 @@ font-family: 'Raleway';
     top: 3100px;
     font-size: 25px;
     font-family: 'Raleway';
+    color: #000;
 }
 
 .Aniket{
@@ -313,6 +313,7 @@ font-family: 'Raleway';
     top: 3150px;
     font-size: 25px;
     font-family: 'Raleway';
+    color: #000;
 }
 
 .Khushi{
@@ -322,6 +323,7 @@ font-family: 'Raleway';
     top: 3200px;
     font-size: 25px;
     font-family: 'Raleway';
+    color: #000;
 }
 
 .Dev{
@@ -331,6 +333,7 @@ font-family: 'Raleway';
     top: 3250px;
     font-size: 25px;
     font-family: 'Raleway';
+    color: #000;
 }
 
 .Vishwa{
@@ -340,6 +343,7 @@ font-family: 'Raleway';
     top: 3300px;
     font-size: 25px;
     font-family: 'Raleway';
+    color: #000;
 }
 .separator2 {
     border-style: solid;

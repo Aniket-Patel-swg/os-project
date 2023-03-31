@@ -33,8 +33,8 @@ const Homepage = () => {
             </div>
             <h1 className='headingr'>Operating System Simulation</h1>
             
-            <div className='para'>
-            <p >CPU scheduling is the process by which the operating system decides which process or task to execute next on a CPU 
+            <div className='something'>
+            <p>CPU scheduling is the process by which the operating system decides which process or task to execute next on a CPU 
                 (Central Processing Unit) when multiple processes are competing for the same resource.</p>
             </div>
            

@@ -90,7 +90,31 @@ newTableData.push({
 return( //displaying the page
  <>
 
- 
+<div className="optimal-information-section">
+        <main>
+          <h1>Optimal Page Replacement Algorithm</h1>
+          <p>
+            {" "}
+            Optimal page replacement algorithm replaces the page whose demand in the future is least as compared to other pages from frames. 
+          </p>
+        </main>
+        <div className="optimal-info">
+          <h1>Algorithm</h1>
+          <p>
+            <code>
+            The idea is simple, for every reference we do following :
+            If referred page is already present, increment hit count.
+            If not present, find if a page that is never referenced in future. 
+            If such a page exists, replace this page with new page. 
+            If no such page exists, find a page that is referenced farthest in future. 
+            Replace this page with new page.
+            </code>
+          </p>
+        </div>
+        <section>
+          <h2>Scroll Down for Simulation</h2>
+        </section>
+        </div>
 
 
 <div className="Heading" ><h1>Optimal Page Replacement</h1></div>
