@@ -4,6 +4,15 @@
     /* background-color: transparent; */
     color: transparent;
 }   
+#chart-section{
+    display: flex;
+    flex-direction: row;
+}
+#chart-section .data{
+    display:flex;
+    flex-direction: column;
+    background-color: grey;
+}
 video {
     object-fit: cover;
     background-size: cover;
@@ -18,9 +27,8 @@ video {
 TableContainer {
     background-color: transparent;
 }
-.chart-section{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 2;
+.chart{
+    bottom: 0px;
+    top: 750px;
+    position: relative;
 }

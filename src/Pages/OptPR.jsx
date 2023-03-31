@@ -10,7 +10,7 @@ function OptPR()
     const [Frames,SetFrames] = useState(0);
     const [componetMemoryState,SetComponentMemoryState] = useState([]);
   const [pageFaults, setPageFaults] = useState(0);
-  
+  const [color, setColor] = useState(null);
   const [tableData, setTableData] = useState([]);
   const [tableHeading, setTableHeading] = useState(false)
   const [pageFaultParagraph, setPageFaultParagraph] = useState(false)
