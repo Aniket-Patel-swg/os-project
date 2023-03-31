@@ -1,6 +1,7 @@
 //importing necessary modules and css file
 import React, { useState } from "react";
 import "../Css/OptPR.css";
+
 //Defining the functional Component
 function OptPR()
 {
@@ -9,10 +10,12 @@ function OptPR()
     const [Frames,SetFrames] = useState(0);
     const [componetMemoryState,SetComponentMemoryState] = useState([]);
   const [pageFaults, setPageFaults] = useState(0);
-  
+  const [color, setColor] = useState(null);
   const [tableData, setTableData] = useState([]);
   const [tableHeading, setTableHeading] = useState(false)
   const [pageFaultParagraph, setPageFaultParagraph] = useState(false)
+ 
+
 
     //function to handle page refrence string taken as input
     const HandlePageRefrences = (event) =>{
@@ -46,6 +49,7 @@ function OptPR()
         pageFaults++;
         
         
+        
         // if there is an empty frame,page added to frame,
         if (componetMemoryState.includes(null)) {
           const index = componetMemoryState.indexOf(null);
@@ -65,6 +69,8 @@ function OptPR()
       
       
 }
+
+
 //Adding the page,page fault count and component memory state  to table data array
 newTableData.push({
     page: page,
@@ -88,6 +94,8 @@ return( //displaying the page
  <>
 
  
+
+
 <div className="Heading" ><h1>Optimal Page Replacement</h1></div>
 <div className="Frames">
     <label>
@@ -139,7 +147,13 @@ return( //displaying the page
           <tr key={index}>
             <td>Frame {index}</td>
             {tableData.map((row, rowIndex) => (
-              <td key={rowIndex} >{row.memory[index]}</td>
+              <td key={rowIndex} className={
+          row.pageFault > tableData[rowIndex - 1]?.pageFault // check if page fault increased
+            ? "red"
+            : "green"
+            
+        }
+        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: "red" } : {}}>{row.memory[index]}</td> //add ternary here
 
             ))}
             {/* <td>{tableData[index].pageFaults}</td> */}

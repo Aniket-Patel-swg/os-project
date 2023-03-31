@@ -29,7 +29,7 @@ const Homepage = () => {
                 <div className="home-page">
            <div>
            <div className="img1">
-                <img src="scientist.png" alt="scientist"></img>
+                <img src="Scientist.png" alt="scientist"></img>
             </div>
             <h1 className='headingr'>Operating System Simulation</h1>
             

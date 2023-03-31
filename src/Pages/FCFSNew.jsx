@@ -51,15 +51,19 @@ function DynamicTable() {
   };
 
   const handleShowSeekTime = () => {
+    if (data.length < 2) {
+      console.error('Data array should have at least two elements');
+      return;
+    }
+  
     let seekTime = 0;
     for (let i = 1; i < data.length ; i++) {
-      const prevHeadPosition = parseInt(data[i].headPosition);
-      const currentHeadPosition = parseInt(data[i+1].headPosition);
+      const prevHeadPosition = parseInt(data[i-1].headPosition);
+      const currentHeadPosition = parseInt(data[i].headPosition);
       seekTime += Math.abs(currentHeadPosition - prevHeadPosition);
     }
     setTotalSeekTime(seekTime);
-    console.log(seekTime);
-
+  
     let showField = document.getElementById('seek-time')
     showField.textContent = seekTime;
   };
