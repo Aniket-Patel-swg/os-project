@@ -116,26 +116,24 @@ function DynamicTable() {
           <h1>First Come First Serve Disc Scheduling</h1>
           <p> FCFS disk scheduling processes disk requests in the order they are received, without any optimization.</p>
         </main>
-        <div className="info">
+        <div className="info" >
           <h1>Algorithm</h1>
           <p>
-              <code>
-              set current_head_position = starting_position
-set total_head_movement = 0
-
-for each request in the queue do:
-    set distance_to_request = abs(request - current_head_position)
-    add distance_to_request to total_head_movement
-    set current_head_position = request
-    
-print "Total head movement: ", total_head_movement
-
-              </code>
+            <code>
+              <ul className="bullet-points" >
+                <li>Let Request array represents an array storing indexes of tracks that have been requested in ascending order of their time of arrival. ‘head’ is the position of disk head.</li>
+                <li>Let us one by one take the tracks in default order and calculate the absolute distance of the track from the head.</li>
+                <li>Increment the total seek count with this distance</li>
+                <li>Currently serviced track position now becomes the new head position.</li>     
+                <li>Go to step 2 until all tracks in request array have not been serviced.</li>        
+              </ul>
+            </code>
           </p>
+          
         </div>
-        <section>
+        {/* <section>
           <h2>Scroll Down for Simulation</h2>
-        </section>
+        </section> */}
       </div>
       <div className="fcfs">
         <label>

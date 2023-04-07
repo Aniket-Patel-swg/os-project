@@ -98,14 +98,14 @@
   }
 
   .Simulate{
-    top:2000px;
+    top:2100px;
     position: absolute;
     left:650px;
     padding: 7px;
   }
 
   .exit-cirtical-section{
-    top:2000px;
+    top:2100px;
     position: absolute;
     left:750px;
     padding: 7px;
@@ -166,6 +166,11 @@
     align-items: center; 
   }
   
+  .peterson-information-section h1:hover{
+    color: #716e6e;
+    transform: scale(1.05);
+  }
+
   .peterson-info{
     width: 100%;
     height: 100vh;
@@ -178,8 +183,12 @@
   .peterson-info h1{
     color: white;
     margin-left: 4em;
-
   }
+
+  .peterson-info:hover{
+    background-color: rgba(255, 255, 255, 0.2)ff;
+  }
+
   .peterson-info p{
     color: white;
     font-size: 1.5em;
@@ -208,6 +217,18 @@
     font-style: normal;
     font-weight: 900;
     color: white;
-    padding: 1.5em;
+    padding: 1em;
+  }
+
+  .peterson p,li{
+    font-family: 'Raleway';
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .peterson p{
+    padding: 1em;
   }
   

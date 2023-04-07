@@ -98,6 +98,13 @@ const Peterson = () => {
       </div>
       <div className="peterson">
         <h1>Peterson Algorithm </h1>
+        <p>
+        <ul>
+            <li>Step1: Click on the Simulate button to move the ball to the entry section.</li>
+            <li>Step2: Click on the respective balls to move them into the critical section.</li>
+            <li>Step3: Click on the Exit Critical Section button to remove the ball from critical section.</li>
+          </ul>
+        </p>
         <div
           onClick={() => handleApplyAlgorithms(1)}
           disabled={ball1InSection || !simulateButtonClicked}
