@@ -98,15 +98,69 @@
   }
 
   .Simulate{
-    top:42em;
+    top:2700px;
     position: absolute;
     left:650px;
     padding: 7px;
   }
 
   .exit-cirtical-section{
-    top:42em;
+    top:2700px;
     position: absolute;
     left:750px;
     padding: 7px;
+  }
+
+  .peterson-information-section main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url(https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80); */
+    background-image: url('../Images/petersonpic.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* opacity: 0.9; */
+  }
+  
+  .peterson-information-section h1, p{
+    color: #E5E5E2;
+  }
+  
+  .peterson-information-section h1{
+    font-size: 50px;
+  }
+  .peterson-info{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+  }
+  .peterson-info h1{
+    color: black;
+    margin-left: 4em;
+  }
+  .peterson-info code{
+    color: black;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 3em;
+  }
+  .peterson-info li{
+    color: black;
+    list-style-type: disc;
+  }
+  .peterson-info ul{
+    padding-left: 3em;
+  }
+  .peterson-information-section section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
   }

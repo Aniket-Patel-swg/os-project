@@ -21,7 +21,7 @@ const Peterson = () => {
   const handleApplyAlgorithms = (ballNumber) => {
     const screenWidth = window.innerWidth;
     console.log("handle apply algorithm is clicked");
-    if (ball1InSection || ball2InSection) {
+    if (ball1InSection || ball2InSection)  {
       console.log("one process is already in critical section");
       alert("One process is already in critical section");
       return;
@@ -69,32 +69,26 @@ const Peterson = () => {
   return (
     <>
       {/* Check text */}
-      {/* <div className="information-section">
+      <div className="peterson-information-section">
         <main>
-          <h1>First Come First Serve Disc Scheduling</h1>
-          <p>
-            {" "}
-            FCFS disk scheduling processes disk requests in the order they are
-            received, without any optimization.
-          </p>
+          <h1>Peterson's Solution</h1>
+          <p> Peterson's solution is a classic solution to the critical section problem.The critical section problem ensures that no two processes change or modify a shared resource simultaneously.</p>
         </main>
-        <div className="info">
+        <div className="peterson-info">
           <h1>Algorithm</h1>
           <p>
-            <code>
-              set current_head_position = starting_position set
-              total_head_movement = 0 for each request in the queue do: set
-              distance_to_request = abs(request - current_head_position) add
-              distance_to_request to total_head_movement set
-              current_head_position = request print "Total head movement: ",
-              total_head_movement
-            </code>
+              <code>
+                The algorithm uses two variables: flag and turn. 
+                A flag[n] value of true indicates that the process n wants to enter the critical section. 
+                Entrance to the critical section is granted for process P0 if P1 does not want to enter its critical section and if P1 has given priority to P0 by setting turn to 0.
+                The algorithm satisfies the three essential criteria to solve the critical-section problem i.e.mutual exclusion, progress, and bounded waiting.
+              </code>
           </p>
         </div>
         <section>
           <h2>Scroll Down for Simulation</h2>
         </section>
-      </div> */}
+      </div>
       <div className="peterson">
         <h1>Peterson Algorithm </h1>
         <p>Some information about peterson algorithm</p>
