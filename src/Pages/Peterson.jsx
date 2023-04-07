@@ -21,7 +21,7 @@ const Peterson = () => {
   const handleApplyAlgorithms = (ballNumber) => {
     const screenWidth = window.innerWidth;
     console.log("handle apply algorithm is clicked");
-    if (ball1InSection || ball2InSection) {
+    if (ball1InSection || ball2InSection)  {
       console.log("one process is already in critical section");
       alert("One process is already in critical section");
       return;

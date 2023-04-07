@@ -63,7 +63,7 @@ import React, { useState } from "react";
     //Delete Process
     const deleteProcess = (PID) => {
       const newProcess = process.filter((CurrProcess) => {
-        return CurrProcess.PID !== PID;
+        return (CurrProcess.PID) !== PID;
       });
       //newProcess becomes new Array and it filtered out the process which we have clicked
       setProcess(newProcess);
@@ -147,25 +147,25 @@ import React, { useState } from "react";
         <div className="scheduling-info">
           <h1>Algorithm</h1>
           <p>
-            <code>
-            Assign a priority value to each process.
-            Initialize a queue for each priority level.
-            Add all processes to their respective priority queues based on their assigned priority value.
-            Select the process from the highest priority queue.
-            Execute the selected process.
-            If a higher priority process arrives while a lower priority process is executing, preempt the lower priority process and move it to the appropriate priority queue based on its new priority value.
-            Repeat steps 4-6 until all processes have been executed.
-            </code>
+            <ul>
+            <li>Assign a priority value to each process.</li>
+            <li>Initialize a queue for each priority level.</li>
+            <li>Add all processes to their respective priority queues based on their assigned priority value.</li>
+            <li>Select the process from the highest priority queue.</li>
+            <li>Execute the selected process.</li>
+            <li>If a higher priority process arrives while a lower priority process is executing, preempt the lower priority process and move it to the appropriate priority queue based on its new priority value.</li>
+            <li>Repeat steps 4-6 until all processes have been executed.</li>
+            </ul>
           </p>
         </div>
-        <section>
+        {/* <section>
           <h2>Scroll Down for Simulation</h2>
-        </section>
+        </section> */}
       </div>
         <div className="scheduling-algo-page">
-          {/* <div className="video-container">
+          <div className="video-container">
             <video src="../video.mp4" autoPlay loop muted></video>
-          </div> */}
+          </div>
 
           <div className="table-container">
             <TableContainer component={Paper}>
@@ -181,7 +181,7 @@ import React, { useState } from "react";
                     <TableCell align="center">Turn Around Time(TAT)</TableCell>
                     <TableCell align="center">Waiting Time(WT)</TableCell>
                     <TableCell align="center">Response Time(RT)</TableCell>
-                    <TableCell align="center">Delete Process</TableCell>
+                    {/* <TableCell align="center">Delete Process</TableCell> */}
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -190,9 +190,9 @@ import React, { useState } from "react";
                       key={row.id}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell align="center" name="processID">
+                      {/* <TableCell align="center" name="processID">
                         {row.PID}
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="center" name="processID">
                         p{PID++}
                       </TableCell>
@@ -200,6 +200,7 @@ import React, { useState } from "react";
                         <TextField
                           //   hiddenLabel
                           //   name="priority"
+                          type="number"
                           id="filled-hidden-label-small"
                           variant="filled"
                           size="small"
@@ -210,6 +211,7 @@ import React, { useState } from "react";
                         <TextField
                           //   hiddenLabe
                           //   name="arrivalTime"
+                          type="number"
                           id="filled-hidden-label-small"
                           variant="filled"
                           size="small"
@@ -218,6 +220,7 @@ import React, { useState } from "react";
                       </TableCell>
                       <TableCell align="center">
                         <TextField
+                           type="number"
                           hiddenLabel
                           //   name="burstTime"
                           id="filled-hidden-label-small"
@@ -225,6 +228,8 @@ import React, { useState } from "react";
                           size="small"
                           onChange={(e) => {
                             burstTime(e, index);
+ 
+
                           }}
                         />
                       </TableCell>
@@ -234,13 +239,13 @@ import React, { useState } from "react";
                       <TableCell align="center">{row.Response_Time}</TableCell>
                       <TableCell align="center">
                         {row.del_process}
-                        <IconButton
+                        {/* <IconButton
                           aria-label="delete"
                           onClick={() => deleteProcess(row.PID)}
                         >
                           <DeleteIcon />
-                        </IconButton>
-                      </TableCell>
+                        </IconButton> */}
+                      </TableCell>  
                     </TableRow>
                   ))}
                 </TableBody>
@@ -276,7 +281,7 @@ import React, { useState } from "react";
           </div>
         </div>
         <div className="chart">
-          here chart will show
+          here chart will be shown here
           <div id="chart-section">
             {ganttArray.map((dataItem, index) => (
               <>
@@ -298,7 +303,9 @@ import React, { useState } from "react";
                   })(),
                 }}
                 >
-                  <Button>p{dataItem}</Button>
+                  {/* <Button>
+                    { dataItem !== null ? dataItem : dataItem === 0 ? 0 : ""}
+                   </Button> */}
                   <span
                     style={{
                       position: "absolute",
