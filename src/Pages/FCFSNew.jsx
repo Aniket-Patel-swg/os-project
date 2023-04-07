@@ -28,17 +28,35 @@ function DynamicTable() {
     setHeadPosition(event.target.value);
   };
 
+  // const handleInputChange = (event) => {
+  //   setInputValue(event.target.value);
+  //   const value = event.target.value;
+  //   console.log(value);
+  //   setHeadPosition(value);
+  // };
+
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
     const value = event.target.value;
-    console.log(value);
-    setHeadPosition(value);
+    if (/^\d*$/.test(value)) {
+      setInputValue(value);
+      setHeadPosition(value);
+    }
   };
+
+  // const handleDataChange = (event, index) => {
+  //   const newData = [...data];
+  //   const headData = Math.abs(event.target.value);
+  //   newData[index][event.target.name] = event.target.value;
+  //   setHeadPosition(headData);
+  //   setData(newData);
+  // };
 
   const handleDataChange = (event, index) => {
     const newData = [...data];
     const headData = Math.abs(event.target.value);
-    newData[index][event.target.name] = event.target.value;
+    const value = event.target.value;
+    if (!/^\d*$/.test(value)) return;
+    newData[index][event.target.name] = value;
     setHeadPosition(headData);
     setData(newData);
   };
@@ -121,7 +139,7 @@ print "Total head movement: ", total_head_movement
       </div>
       <div className="fcfs">
         <label>
-          Initial Head Position:
+          Initial Head Position:(Enter only numeric values)
           <input
             type="text"
             value={inputValue}
@@ -165,10 +183,10 @@ print "Total head movement: ", total_head_movement
         {/* <button onClick={handleSimulate}>Show output</button> */}
         <button onClick={handleShowSeekTime}>Show seek time</button>
         <div>
-          Total seek time is : <p id="seek-time">{handleShowSeekTime}</p>{" "}
+          Total seek time is : <div className="seektime" id="seek-time">{handleShowSeekTime}</div>{" "}
         </div>
         <div>
-          Selected Number of tracks is : <p id="track-number"></p>
+          Selected Number of tracks is : <div classname="tracks" id="track-number"></div>
         </div>
       </div>
       <div className="chart-container">

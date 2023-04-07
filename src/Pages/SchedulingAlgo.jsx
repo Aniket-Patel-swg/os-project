@@ -147,7 +147,7 @@ import React, { useState } from "react";
         <div className="scheduling-info">
           <h1>Algorithm</h1>
           <p>
-            <ol>
+            <ul>
             <li>Assign a priority value to each process.</li>
             <li>Initialize a queue for each priority level.</li>
             <li>Add all processes to their respective priority queues based on their assigned priority value.</li>
@@ -155,7 +155,7 @@ import React, { useState } from "react";
             <li>Execute the selected process.</li>
             <li>If a higher priority process arrives while a lower priority process is executing, preempt the lower priority process and move it to the appropriate priority queue based on its new priority value.</li>
             <li>Repeat steps 4-6 until all processes have been executed.</li>
-            </ol>
+            </ul>
           </p>
         </div>
         {/* <section>
