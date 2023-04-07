@@ -5,6 +5,7 @@ import Blob from "../Blob/Blob.js";
 import "../Css/FinalHomePage.css";
 import NavBar from "../Css/NavBar.jsx";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import Team from './Team.jsx';
 
 const FinalHomePage = () => {
   const teamRef = useRef(null);
@@ -82,7 +83,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/SchedulingAlgo">
+            <a href="/peterson">
               <button> Open Simulator</button>
             </a>
           </section>
@@ -168,6 +169,7 @@ const FinalHomePage = () => {
         <div className="ellipse2"></div>
         <div className="ellipse3"></div>
       </div>
+      <Team />
     </>
   );
 };

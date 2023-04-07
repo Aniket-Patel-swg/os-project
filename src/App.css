@@ -9,6 +9,7 @@ body{
 *{
   padding: 0px;
   margin: 0px;
+  
 }
 ul {
   list-style: none;
@@ -53,4 +54,8 @@ h1 {
 h2 {
   font-size: 24px;
   margin-top: 50px;
+}
+
+body{
+  overflow-x: hidden;
 }

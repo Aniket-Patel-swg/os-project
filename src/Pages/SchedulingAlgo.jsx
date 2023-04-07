@@ -27,17 +27,7 @@ const SchedulingAlgo = () => {
   let ProcessID = 0;
   const [process, setProcess] = useState(Processes);
 
-  function createData(
-    PID,
-    Priority,
-    Arrival_Time,
-    Burst_Time,
-    Completion_Time,
-    TurnAround_Time,
-    Waiting_Time,
-    Response_Time
-  ) {
-    return {
+    function createData(
       PID,
       Priority,
       Arrival_Time,
@@ -45,17 +35,27 @@ const SchedulingAlgo = () => {
       Completion_Time,
       TurnAround_Time,
       Waiting_Time,
-      Response_Time,
-    };
-  }
+      Response_Time
+    ) {
+      return {
+        PID,
+        Priority,
+        Arrival_Time,
+        Burst_Time,
+        Completion_Time,
+        TurnAround_Time,
+        Waiting_Time,
+        Response_Time,
+      };
+    }
 
   //Add Process
   const addProcess = () => {
     let pid = Math.floor(100 * Math.random());
     setProcess([...process, createData(pid, "", "", "", "", "", "", "")]);
 
-    console.log("hi");
-  };
+      console.log("hi");
+    };
 
   //Delete Process
   /*  const deleteProcess = (PID) => {
@@ -72,56 +72,56 @@ const SchedulingAlgo = () => {
     setProcess(newProcess);
   };
 
-  //getting priority
-  const priority = (e, i) => {
-    const t = process;
-    t[i]["Priority"] = e.target.value;
-    setProcess(t);
-    console.log(process);
-  };
+    //getting priority
+    const priority = (e, i) => {
+      const t = process;
+      t[i]["Priority"] = e.target.value;
+      setProcess(t);
+      console.log(process);
+    };
 
-  const arrivalTime = (e, i) => {
-    const t = process;
-    t[i]["Arrival_Time"] = e.target.value;
-    setProcess(t);
-    console.log(process);
-  };
+    const arrivalTime = (e, i) => {
+      const t = process;
+      t[i]["Arrival_Time"] = e.target.value;
+      setProcess(t);
+      console.log(process);
+    };
 
-  const burstTime = (e, i) => {
-    const t = process;
-    t[i]["Burst_Time"] = e.target.value;
-    setProcess(t);
-  };
+    const burstTime = (e, i) => {
+      const t = process;
+      t[i]["Burst_Time"] = e.target.value;
+      setProcess(t);
+    };
 
-  // const priorityPreemptive = require("../models/CPUScheduling");
+    // const priorityPreemptive = require("../models/CPUScheduling");
 
-  //Result
-  const Result = async (process) => {
-    // console.log(priorityScheduling(process));
-    // let data = process;
-    // const res = await axios.post("http://localhost:4000/schedule", {data : [...process]});
-    console.log(process);
-    try {
-      const data = await axios.post("http://localhost:8000/schedule", {
-        process: [...process],
-      });
-      const myData = data.data.process;
-      const chartData = data.data.ganttAraay;
-      setProcess(myData);
-      console.log({ chartData });
-      setGanttArray(chartData);
-      console.log(myData);
+    //Result
+    const Result = async (process) => {
+      // console.log(priorityScheduling(process));
+      // let data = process;
+      // const res = await axios.post("http://localhost:4000/schedule", {data : [...process]});
+      console.log(process);
+      try {
+        const data = await axios.post("http://localhost:8000/schedule", {
+          process: [...process],
+        });
+        const myData = data.data.process;
+        const chartData = data.data.ganttAraay;
+        setProcess(myData);
+        console.log({ chartData });
+        setGanttArray(chartData);
+        console.log(myData);
 
-      // let chartSection = document.getElementById('chart-section');
-      // chartSection.textContent += chartData;
+        // let chartSection = document.getElementById('chart-section');
+        // chartSection.textContent += chartData;
 
-      // let chartSection = document.getElementById('chart-section');
-      // chartSection.innerHTML = '';
-      // chartData.map((item, index) => {
-      //   const li = document.createElement('li');
-      //   li.innerText = item;
-      //   chartSection.appendChild(li);
-      // });
+        // let chartSection = document.getElementById('chart-section');
+        // chartSection.innerHTML = '';
+        // chartData.map((item, index) => {
+        //   const li = document.createElement('li');
+        //   li.innerText = item;
+        //   chartSection.appendChild(li);
+        // });
 
       //   let chartSection = document.getElementById('chart-section');
       // chartSection.innerHTML = ""; // clear existing content
@@ -151,29 +151,29 @@ const SchedulingAlgo = () => {
       <NavBar />
       <div className="information-section">
         <main>
-          <h1>First Come First Serve Disc Scheduling</h1>
+          <h1>Priority Preemptive CPU Scheduling</h1>
           <p>
             {" "}
-            FCFS disk scheduling processes disk requests in the order they are
-            received, without any optimization.
+            Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority.
           </p>
         </main>
-        <div className="info">
+        <div className="scheduling-info">
           <h1>Algorithm</h1>
           <p>
-            <code>
-              set current_head_position = starting_position set
-              total_head_movement = 0 for each request in the queue do: set
-              distance_to_request = abs(request - current_head_position) add
-              distance_to_request to total_head_movement set
-              current_head_position = request print "Total head movement: ",
-              total_head_movement
-            </code>
+            <ul>
+            <li>Assign a priority value to each process.</li>
+            <li>Initialize a queue for each priority level.</li>
+            <li>Add all processes to their respective priority queues based on their assigned priority value.</li>
+            <li>Select the process from the highest priority queue.</li>
+            <li>Execute the selected process.</li>
+            <li>If a higher priority process arrives while a lower priority process is executing, preempt the lower priority process and move it to the appropriate priority queue based on its new priority value.</li>
+            <li>Repeat steps 4-6 until all processes have been executed.</li>
+            </ul>
           </p>
         </div>
-        <section>
+        {/* <section>
           <h2>Scroll Down for Simulation</h2>
-        </section>
+        </section> */}
       </div>
       <div className="scheduling-algo-page">
         {/* <div className="video-container">
@@ -185,7 +185,6 @@ const SchedulingAlgo = () => {
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center">Process ID</TableCell>
                   <TableCell align="center">Process ID</TableCell>
                   <TableCell align="center">Priority</TableCell>
                   <TableCell align="center">Arrival Time(AT)</TableCell>
@@ -203,9 +202,6 @@ const SchedulingAlgo = () => {
                     key={row.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell align="center" name="processID">
-                      {row.PID}
-                    </TableCell>
                     <TableCell align="center" name="processID">
                       {ProcessID++}
                     </TableCell>

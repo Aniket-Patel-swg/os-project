@@ -40,9 +40,9 @@ const NavBar = () => {
                   </li>
                 </ul>
               </li>
-              <li>
+              {/* <li>
                 <a href="/tech Stack">Tech Stack</a>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </section>
