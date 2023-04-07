@@ -18,11 +18,15 @@ function OptPR() {
 
   //function to handle page refrence string taken as input
   const HandlePageRefrences = (event) => {
+   
     const refrenceString = event.target.value //converting string to array
-      .split("")
+      .split(" ")
       .map((reference) => parseInt(reference.trim()))
-      .filter((reference) => !isNaN(reference));
-    SetpageRefrences(refrenceString);
+      .filter((reference) => !isNaN(reference)); 
+     SetpageRefrences(refrenceString);
+    
+
+    
   };
   //function to handle changes in number of frames
   const HandleFrames = (event) => {
@@ -102,21 +106,24 @@ return( //displaying the page
           <h1>Algorithm</h1>
           <p>
             <code>
-            The idea is simple, for every reference we do following :
-            If referred page is already present, increment hit count.
-            If not present, find if a page that is never referenced in future. 
-            If such a page exists, replace this page with new page. 
-            If no such page exists, find a page that is referenced farthest in future. 
-            Replace this page with new page.
+            <ul>
+            <h3>For every reference we do the following : </h3>
+           
+            <li>If referred page is already present, increment hit count.</li>
+            <li>If not present, find if a page that is never referenced in future. </li>
+            <li>If such a page exists, replace this page with new page.</li> 
+            <li>If no such page exists, find a page that is referenced farthest in future. Replace this with new page. </li>
+            
+            </ul>
             </code>
           </p>
         </div>
         <section>
-          <h2>Scroll Down for Simulation</h2>
+          
         </section>
         </div>
 
-
+<div className="simulation">
 <div className="Heading" ><h1>Optimal Page Replacement</h1></div>
 <div className="Frames">
     <label>
@@ -174,7 +181,7 @@ return( //displaying the page
             : "green"
             
         }
-        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: "rgb(255, 182, 182)" } : {}}>{row.memory[index]}</td> //add ternary here
+        style={rowIndex === 0 && row.pageFault === 1 ? { backgroundColor: " rgb(183, 70, 70)" } : {}}>{row.memory[index]}</td> //add ternary here
 
             ))}
             {/* <td>{tableData[index].pageFaults}</td> */}
@@ -215,6 +222,7 @@ return( //displaying the page
             </h3>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

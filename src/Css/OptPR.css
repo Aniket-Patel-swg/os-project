@@ -1,8 +1,4 @@
-.Heading{
-    
-    color:  rgb(242 49 137);
 
-}
 
 .Frames{
     margin : auto;
@@ -58,32 +54,7 @@
 background-color: red;
   }
 
-  .misses{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:  rgb(0 121 117);
-  }
 
-  .hits{
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color:  rgb(0 121 117);
-
-  }
-
- 
-.hitRate{
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color:  rgb(0 121 117);
-}
-
-  .totalRef{
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(0 121 117);
-  }
-
-  .missrate{
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    color: rgb(0 121 117);
-  }
 
    /* table tr td:nth-child(3) {
     background-color: green;
@@ -94,11 +65,11 @@ background-color: red;
   }  */
 
   .red{
-    background-color: rgb(255, 182, 182);
+    background-color: rgb(183, 70, 70);
   }
 
   .green{
-    background-color: rgb(181, 253, 181);
+    background-color: rgb(120, 197, 120);
   }
 
   body {
@@ -128,7 +99,7 @@ background-color: red;
     align-items: center;
     flex-direction: column;
     /* background-image: url(https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80); */
-    background-image: url('../Images/optpic.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Images/optpic.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -141,33 +112,52 @@ background-color: red;
   .optimal-information-section h1{
     font-size: 50px;
   }
+
+  .optimal-information-section h1:hover{
+    color: #716e6e;
+    transform: scale(1.05);
+  }
   .optimal-info{
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
+    background-image: linear-gradient(to bottom right, rgb(24 27 29), rgb(72 72 142) );
+  }
+
+  .peterson-info:hover{
+    background-color: rgba(255, 255, 255, 0.2)ff;
   }
   .optimal-info h1{
-    color: black;
+    color: rgb(240, 240, 240)(84, 162, 162);
     margin-left: 4em;
   }
   .optimal-info code{
-    color: black;
+    color: rgb(232, 222, 222);
     font-size: 1.5em;
     font-weight: 200;
     padding: 3em;
   }
+  .optimal-info h3{
+    text-align: left;
+    color: rgb(232, 222, 222);
+    
+  }
   .optimal-info li{
-    color: black;
+    color: rgb(232, 222, 222);
     list-style-type: disc;
+    text-align: left;
+    text-indent: 2%;
+    
+    
   }
   .optimal-info ul{
     padding-left: 3em;
   }
   .optimal-information-section section{
     width: 100%;
-    height: 100vh;
+    height: 0vh;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -177,4 +167,56 @@ background-color: red;
     padding-bottom: 30px;
 
 }
- 
+
+
+
+.simulation h1{
+  color: rgb(255, 255, 255);
+  margin-bottom: 70px;
+  
+}
+
+.optimal-info{
+  
+}
+
+
+
+
+.simulation input[type="text"] {
+  width: auto;
+  margin-left: 1%;
+  padding: 0.5%;
+}
+
+.simulation input[type="number"]{
+  width: auto;
+  margin-left: 1%;
+  padding: 0.5%;
+
+}
+
+.simulation label{
+  color:rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-size: large;
+  font-weight: 700;
+  
+  
+}
+
+.simulation button{
+  padding: 7px;
+  margin: 30px;
+  width: 8%;
+}
+.simulation{
+  background-image: url(../Images/image2.gif);
+}
+
+.simulation h3{
+  color: rgb(248, 248, 248);
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-weight: 500;
+}
+

@@ -23,6 +23,9 @@ function DynamicTable() {
   const [totalSeekTime, setTotalSeekTime] = useState(0);
   const [trackData, setTrackData] = useState(0);
   const [numTracks, setNumTracks] = useState(0);
+  
+  
+
 
   const handleHeadPositionChange = (event) => {
     setHeadPosition(event.target.value);
@@ -33,6 +36,7 @@ function DynamicTable() {
     const value = event.target.value;
     console.log(value);
     setHeadPosition(value);
+    
   };
 
   const handleDataChange = (event, index) => {
@@ -56,6 +60,7 @@ function DynamicTable() {
     } else {
       alert("Given number of tracks is not enough");
     }
+
   };
 
   const handleSimulate = () => {
@@ -161,7 +166,7 @@ print "Total head movement: ", total_head_movement
           placeholder="Enter number of tracks"
           disabled={trackDisabled}
         />
-        <button onClick={handleAddRow}>Add Row</button>
+        <button onClick={handleAddRow} >Add Row</button>
         {/* <button onClick={handleSimulate}>Show output</button> */}
         <button onClick={handleShowSeekTime}>Show seek time</button>
         <div>
