@@ -22,6 +22,7 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Images/fcfspic.jpg');
   }
   
   .information-section h1, p{
@@ -75,10 +76,10 @@ TableContainer {
 .fcfs {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ddd;
-    background-color: #222;
+    /* background-color: #222; */
     padding: 20px;
     /* border-radius: 10px; */
-    box-shadow: 0 0 10px rgba(58, 58, 58, 0.1);
+    /* box-shadow: 0 0 10px rgba(58, 58, 58, 0.1); */
     overflow: hidden;
   }
   
@@ -93,14 +94,14 @@ TableContainer {
     font-size: 14px;
     padding: 10px;
     border: none;
-    /* border-radius: 5px; */
-    background-color: #333;
-    color: #ddd;
+    border: 1px solid #444;
+    /* background-color: #333; */
+    color: #181818;
     margin-right: 10px;
     transition: all 0.3s ease-in-out;
   }
   
-  .fcfs input[type="text"]:disabled,
+  /* .fcfs input[type="text"]:disabled,
   .fcfs input[type="number"]:disabled {
     background-color: #444;
   }
@@ -111,7 +112,7 @@ TableContainer {
   .fcfs input[type="number"]:focus {
     background-color: #444;
     color: #fff;
-  }
+  } */
   
   .fcfs table {
     border-collapse: collapse;
@@ -127,12 +128,12 @@ TableContainer {
   }
   
   .fcfs th {
-    background-color: #111;
+    /* background-color: #111; */
     font-weight: bold;
     transition: all 0.3s ease-in-out;
   }
   
-  .fcfs th:hover {
+  /* .fcfs th:hover {
     background-color: #444;
   }
   
@@ -142,7 +143,7 @@ TableContainer {
   
   .fcfs tr:hover {
     background-color: #444;
-  }
+  } */
   
   .fcfs button {
     font-size: 14px;
@@ -172,9 +173,15 @@ TableContainer {
     margin: 0;
   }
   .chart-container {
-    background-color: #1d1d1d;
+    /* background-color: #8c8b8b; */
     color: #fff;
     margin: 0px;
     padding: 0px;
   }
   
+  .tracks{
+    color: #171717;
+  }
+  .tracks{
+    color: #171717;
+  }

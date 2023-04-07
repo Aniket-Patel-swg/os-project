@@ -3,8 +3,8 @@ import "../Css/Peterson.css";
 import Ball from "./Ball.jsx";
 
 const Peterson = () => {
-  let [ball1Pos, setBall1Pos] = useState({ top: 50, left: 50 });
-  let [ball2Pos, setBall2Pos] = useState({ top: 100, left: 50 });
+  let [ball1Pos, setBall1Pos] = useState({ top: 50, left: 50, text:"P1" });
+  let [ball2Pos, setBall2Pos] = useState({ top: 100, left: 50, text:"P2" });
   const [ball1InSection, setBall1InSection] = useState(false);
   const [ball2InSection, setBall2InSection] = useState(false);
   const [simulateButtonClicked, setSimulateButtonClicked] = useState(false);
@@ -55,12 +55,12 @@ const Peterson = () => {
     console.log("Exit Critical Section button clicked");
     if (ball1InSection) {
       console.log("ball 1 is getting out of critical section");
-      let ball1NewPos = { top: 50, left: screenWidth * 0.7 };
+      let ball1NewPos = { top: 50, left: screenWidth * 0.8 };
       setBall1Pos(ball1NewPos);
       setBall1InSection(false);
     } else if (ball2InSection) {
       console.log("ball 2 is getting out of critical section");
-      let ball2NewPos = { top: 100, left: screenWidth * 0.7 };
+      let ball2NewPos = { top: 100, left: screenWidth * 0.8 };
       setBall2Pos(ball2NewPos);
       setBall2InSection(false);
     }
@@ -68,36 +68,36 @@ const Peterson = () => {
 
   return (
     <>
-      {/* Check text */}
-      {/* <div className="information-section">
+      <div className="peterson-information-section">
         <main>
-          <h1>First Come First Serve Disc Scheduling</h1>
-          <p>
-            {" "}
-            FCFS disk scheduling processes disk requests in the order they are
-            received, without any optimization.
-          </p>
+          <h1>Peterson's Solution</h1>
+          <p> Peterson's solution is a classic solution to the critical section problem.The critical section problem ensures that no two processes change or modify a shared resource simultaneously.</p>
         </main>
-        <div className="info">
+        {/* <div className="peterson-info">
           <h1>Algorithm</h1>
           <p>
-            <code>
-              set current_head_position = starting_position set
-              total_head_movement = 0 for each request in the queue do: set
-              distance_to_request = abs(request - current_head_position) add
-              distance_to_request to total_head_movement set
-              current_head_position = request print "Total head movement: ",
-              total_head_movement
-            </code>
+              <code>
+                 
+                 
+                Entrance to the critical section is granted for process P0 if P1 does not want to enter its critical section and if P1 has given priority to P0 by setting turn to 0.
+                The algorithm satisfies the three essential criteria to solve the critical-section problem i.e.mutual exclusion, progress, and bounded waiting.
+              </code>
+          </p>
+        </div> */}
+        <div className="peterson-info">
+          <h1>Algorithm</h1>
+          <p>
+            <ol>
+            <li>The algorithm uses two variables: flag and turn.</li>
+            <li>A flag[n] value of true indicates that the process n wants to enter the critical section.</li>
+            <li>Entrance to the critical section is granted for process P0 if P1 does not want to enter its critical section and if P1 has given priority to P0 by setting turn to 0.</li>
+            <li>The algorithm satisfies the three essential criteria to solve the critical-section problem i.e.mutual exclusion, progress, and bounded waiting.</li>
+            </ol>
           </p>
         </div>
-        <section>
-          <h2>Scroll Down for Simulation</h2>
-        </section>
-      </div> */}
+      </div>
       <div className="peterson">
         <h1>Peterson Algorithm </h1>
-        <p>Some information about peterson algorithm</p>
         <div
           onClick={() => handleApplyAlgorithms(1)}
           disabled={ball1InSection || !simulateButtonClicked}

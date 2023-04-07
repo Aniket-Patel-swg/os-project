@@ -132,6 +132,7 @@ background-color: red;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    /* opacity: 0.9; */
   }
   
   .optimal-information-section h1, p{

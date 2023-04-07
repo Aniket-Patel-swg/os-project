@@ -136,32 +136,32 @@ import React, { useState } from "react";
     return (
       <>
         {/* <Navbar /> */}
-        <div className="information-section">
-          <main>
-            <h1>First Come First Serve Disc Scheduling</h1>
-            <p>
-              {" "}
-              FCFS disk scheduling processes disk requests in the order they are
-              received, without any optimization.
-            </p>
-          </main>
-          <div className="info">
-            <h1>Algorithm</h1>
-            <p>
-              <code>
-                set current_head_position = starting_position set
-                total_head_movement = 0 for each request in the queue do: set
-                distance_to_request = abs(request - current_head_position) add
-                distance_to_request to total_head_movement set
-                current_head_position = request print "Total head movement: ",
-                total_head_movement
-              </code>
-            </p>
-          </div>
-          <section>
-            <h2>Scroll Down for Simulation</h2>
-          </section>
+        <div className="scheduling-information-section">
+        <main>
+          <h1>Priority Preemptive CPU Scheduling</h1>
+          <p>
+            {" "}
+            Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority.
+          </p>
+        </main>
+        <div className="scheduling-info">
+          <h1>Algorithm</h1>
+          <p>
+            <code>
+            Assign a priority value to each process.
+            Initialize a queue for each priority level.
+            Add all processes to their respective priority queues based on their assigned priority value.
+            Select the process from the highest priority queue.
+            Execute the selected process.
+            If a higher priority process arrives while a lower priority process is executing, preempt the lower priority process and move it to the appropriate priority queue based on its new priority value.
+            Repeat steps 4-6 until all processes have been executed.
+            </code>
+          </p>
         </div>
+        <section>
+          <h2>Scroll Down for Simulation</h2>
+        </section>
+      </div>
         <div className="scheduling-algo-page">
           {/* <div className="video-container">
             <video src="../video.mp4" autoPlay loop muted></video>
