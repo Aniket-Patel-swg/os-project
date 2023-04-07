@@ -75,10 +75,10 @@ TableContainer {
 .fcfs {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ddd;
-    background-color: #222;
+    background-color: #c4c4c4;
     padding: 20px;
     /* border-radius: 10px; */
-    box-shadow: 0 0 10px rgba(58, 58, 58, 0.1);
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.1);
     overflow: hidden;
   }
   
@@ -94,7 +94,7 @@ TableContainer {
     padding: 10px;
     border: none;
     /* border-radius: 5px; */
-    background-color: #333;
+    background-color: #dcdcdc;
     color: #ddd;
     margin-right: 10px;
     transition: all 0.3s ease-in-out;
@@ -102,14 +102,14 @@ TableContainer {
   
   .fcfs input[type="text"]:disabled,
   .fcfs input[type="number"]:disabled {
-    background-color: #444;
+    background-color: #cbcbcb;
   }
   
   .fcfs input[type="text"]:hover,
   .fcfs input[type="number"]:hover,
   .fcfs input[type="text"]:focus,
   .fcfs input[type="number"]:focus {
-    background-color: #444;
+    background-color: #c9c9c9;
     color: #fff;
   }
   
@@ -121,13 +121,13 @@ TableContainer {
   
   .fcfs th,
   .fcfs td {
-    border: 1px solid #444;
+    border: 1px solid #000000;
     padding: 10px;
     text-align: left;
   }
   
   .fcfs th {
-    background-color: #111;
+    background-color: #000000;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
   }
@@ -157,7 +157,7 @@ TableContainer {
   }
   
   .fcfs button:hover {
-    background-color: #444;
+    background-color: #000000;
   }
   
   .fcfs p {

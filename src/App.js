@@ -7,18 +7,20 @@ import FCFSNew from './Pages/FCFSNew.jsx';
 import './Css/Homepage.css'
 import Peterson from './Pages/Peterson';
 import OptPR from './Pages/OptPR';
+import FinalHomePage from './Pages/FinalHomePage';
 // import FCFSDisk from './Pages/FCFSDisk';
 
 function App() {
   return (
     <div className="App">
          <Routes>
-              <Route path='/' element = {<Homepage />}/>
+              <Route path='/old' element = {<Homepage />}/>
               <Route path='/SchedulingAlgo' element = {<SchedulingAlgo />}/>
               {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
               <Route path='/peterson' element={<Peterson />} />
              < Route path='/firstcomefirstserve' element={<FCFSNew />} />
              <Route path='/OptPR' element={<OptPR />} />
+             <Route path='/' element={<FinalHomePage />} />
          </Routes>
     </div>
   );

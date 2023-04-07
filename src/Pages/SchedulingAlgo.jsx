@@ -17,12 +17,15 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import Box from "@mui/material/Box";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import NavBar from "../Css/NavBar";
 
 const SchedulingAlgo = () => {
   const Processes = [createData("1", "", "", "", "", "", "", "")];
   const [ganttArray, setGanttArray] = useState([]);
   let ganttIndex = 0;
-  let PID = 0;
+  let ProcessID = 0;
+  const [process, setProcess] = useState(Processes);
 
   function createData(
     PID,
@@ -46,7 +49,6 @@ const SchedulingAlgo = () => {
     };
   }
 
-  const [process, setProcess] = useState(Processes);
   //Add Process
   const addProcess = () => {
     let pid = Math.floor(100 * Math.random());
@@ -56,11 +58,17 @@ const SchedulingAlgo = () => {
   };
 
   //Delete Process
-  const deleteProcess = (PID) => {
-    const newProcess = process.filter((CurrProcess) => {
-      return CurrProcess.PID !== PID;
+  /*  const deleteProcess = (PID) => {
+      const newProcess = process.filter((CurrProcess) => {
+        return CurrProcess.PID !== PID;
+      });
+      //newProcess becomes new Array and it filtered out the process which we have clicked
+      setProcess(newProcess);
+    }; */
+  const deleteProcess = (pidToDelete) => {
+    const newProcess = process.filter((currProcess) => {
+      return currProcess.PID !== pidToDelete;
     });
-    //newProcess becomes new Array and it filtered out the process which we have clicked
     setProcess(newProcess);
   };
 
@@ -128,9 +136,19 @@ const SchedulingAlgo = () => {
     console.log(typeof process);
   };
 
+  const processColor = {
+    0: "yellow",
+    1: "pink",
+    2: "lightgreen",
+    3: "lightblue",
+    4: "#bde2ff",
+    // etc.
+  };
+
   return (
     <>
       {/* <Navbar /> */}
+      <NavBar />
       <div className="information-section">
         <main>
           <h1>First Come First Serve Disc Scheduling</h1>
@@ -159,8 +177,8 @@ const SchedulingAlgo = () => {
       </div>
       <div className="scheduling-algo-page">
         {/* <div className="video-container">
-          <video src="../video.mp4" autoPlay loop muted></video>
-        </div> */}
+            <video src="../video.mp4" autoPlay loop muted></video>
+          </div> */}
 
         <div className="table-container">
           <TableContainer component={Paper}>
@@ -176,7 +194,7 @@ const SchedulingAlgo = () => {
                   <TableCell align="center">Turn Around Time(TAT)</TableCell>
                   <TableCell align="center">Waiting Time(WT)</TableCell>
                   <TableCell align="center">Response Time(RT)</TableCell>
-                  <TableCell align="center">Delete Process</TableCell>
+                  {/* <TableCell align="center">Delete Process</TableCell> */}
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -189,12 +207,13 @@ const SchedulingAlgo = () => {
                       {row.PID}
                     </TableCell>
                     <TableCell align="center" name="processID">
-                      p{PID++}
+                      {ProcessID++}
                     </TableCell>
                     <TableCell align="center">
                       <TextField
                         //   hiddenLabel
                         //   name="priority"
+                        type="number"
                         id="filled-hidden-label-small"
                         variant="filled"
                         size="small"
@@ -205,6 +224,7 @@ const SchedulingAlgo = () => {
                       <TextField
                         //   hiddenLabe
                         //   name="arrivalTime"
+                        type="number"
                         id="filled-hidden-label-small"
                         variant="filled"
                         size="small"
@@ -215,6 +235,7 @@ const SchedulingAlgo = () => {
                       <TextField
                         hiddenLabel
                         //   name="burstTime"
+                        type="number"
                         id="filled-hidden-label-small"
                         variant="filled"
                         size="small"
@@ -229,12 +250,12 @@ const SchedulingAlgo = () => {
                     <TableCell align="center">{row.Response_Time}</TableCell>
                     <TableCell align="center">
                       {row.del_process}
-                      <IconButton
+                      {/* <IconButton
                         aria-label="delete"
                         onClick={() => deleteProcess(row.PID)}
                       >
                         <DeleteIcon />
-                      </IconButton>
+                      </IconButton> */}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -268,32 +289,43 @@ const SchedulingAlgo = () => {
               RESET
             </Button>
           </Stack>
-        </div>
-      </div>
-      <div className="chart">
-        here chart will show
-        <div id="chart-section">
-          {ganttArray.map((dataItem, index) => (
-            <>
-              {/* <div key={index}>p{dataItem}</div> */}
-              <Box
-                component="span"
-                sx={{ position: "relative", p: 2, border: "1px dashed grey" }}
-              >
-                <Button>p{dataItem}</Button>
-                <span
-                  style={{
-                    position: "absolute",
-                    bottom: "50px",
-                    left: "1px",
+
+
+          <div className="chart">
+          here chart will show
+          <div id="chart-section">
+            {ganttArray.map((dataItem, index) => (
+              <>
+                {/* <div key={index}>p{dataItem}</div> */}
+                {/* {ganttArray.map} */}
+                <Box
+                  component="span"
+                  sx={{
+                    position: "relative",
+                    p: 2,
+                    border: "1px dashed grey",
+                    backgroundColor: processColor[dataItem],
                   }}
+                  onClick={() => console.log(dataItem)}
                 >
-                  {ganttIndex++}
-                </span>
-              </Box>
-            </>
-          ))}
-          {ganttIndex}
+                  <Button> {dataItem !== null ? dataItem : dataItem === 0 ? 0 : "-"}
+                  {/* p{dataItem} */}
+                  </Button>
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: "50px",
+                      left: "1px",
+                    }}
+                  >
+                    {ganttIndex++}
+                  </span>
+                </Box>
+              </>
+            ))}
+            {ganttIndex}
+          </div>
+        </div>
         </div>
       </div>
     </>

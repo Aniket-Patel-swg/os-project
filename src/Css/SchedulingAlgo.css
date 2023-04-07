@@ -28,7 +28,10 @@ TableContainer {
     background-color: transparent;
 }
 .chart{
-    bottom: 0px;
-    top: 750px;
+    /* bottom: 0px;
+    top: 750px; */
+    position: static;
+}
+.button-container{
     position: relative;
 }

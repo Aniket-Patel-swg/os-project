@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Css/Peterson.css";
 import Ball from "./Ball.jsx";
+import NavBar from "../Css/NavBar";
 
 const Peterson = () => {
   const [ball1Pos, setBall1Pos] = useState({ top: 50, left: 50 });
@@ -84,18 +85,19 @@ const Peterson = () => {
           <h2>Scroll Down for Simulation</h2>
         </section>
       </div> */}
+      <NavBar />
       <div className="peterson">
         <h1>Peterson Algorithm </h1>
         <p>Some information about peterson algorithm</p>
         <div
           onClick={() => handleApplyAlgorithms(1)}
-          disabled={ball1InSection || !simulateButtonClicked}
+          disabled={ball1InSection || simulateButtonClicked}
         >
           <Ball top={ball1Pos.top} left={ball1Pos.left} />
         </div>
         <div
           onClick={() => handleApplyAlgorithms(2)}
-          disabled={ball2InSection || !simulateButtonClicked}
+          disabled={ball2InSection || simulateButtonClicked}
         >
           <Ball top={ball2Pos.top} left={ball2Pos.left} />
         </div>

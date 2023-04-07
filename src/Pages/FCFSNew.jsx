@@ -12,6 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "../Css/Fcfs.css";
+import NavBar from "../Css/NavBar";
 
 function DynamicTable() {
   const [headPosition, setHeadPosition] = useState("");
@@ -27,22 +28,43 @@ function DynamicTable() {
     setHeadPosition(event.target.value);
   };
 
+  // const handleInputChange = (event) => {
+  //   setInputValue(event.target.value);
+  //   const value = event.target.value;
+  //   console.log(value);
+  //   setHeadPosition(value);
+  // };
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
     const value = event.target.value;
-    console.log(value);
-    setHeadPosition(value);
+    if (/^\d*$/.test(value)) {
+      setInputValue(value);
+      setHeadPosition(value);
+    }
   };
 
+  // const handleDataChange = (event, index) => {
+  //   const newData = [...data];
+  //   const headData = Math.abs(event.target.value);
+  //   newData[index][event.target.name] = event.target.value;
+  //   setHeadPosition(headData);
+  //   setData(newData);
+  // };
   const handleDataChange = (event, index) => {
     const newData = [...data];
     const headData = Math.abs(event.target.value);
-    newData[index][event.target.name] = event.target.value;
+    const value = event.target.value;
+    if (!/^\d*$/.test(value)) return;
+    newData[index][event.target.name] = value;
     setHeadPosition(headData);
     setData(newData);
   };
-
   const handleAddRow = () => {
+    if (headPosition === "") {
+      setIsDisabled(false);
+      setTrackDisabled(false);
+      alert('Please give enter head position')
+      return;
+    }
     setIsDisabled(true);
     setTrackDisabled(true);
     console.log(setHeadPosition);
@@ -54,9 +76,11 @@ function DynamicTable() {
       ]);
     } else {
       alert("Given number of tracks is not enough");
+      setIsDisabled(false);
+      setTrackDisabled(false);
     }
   };
-
+  
   const handleSimulate = () => {
     console.log(data);
   };
@@ -92,26 +116,27 @@ function DynamicTable() {
   let i = 0;
   return (
     <>
+      <NavBar />
       <div className="information-section">
         <main>
           <h1>First Come First Serve Disc Scheduling</h1>
-          <p> FCFS disk scheduling processes disk requests in the order they are received, without any optimization.</p>
+          <p>
+            {" "}
+            FCFS disk scheduling processes disk requests in the order they are
+            received, without any optimization.
+          </p>
         </main>
         <div className="info">
           <h1>Algorithm</h1>
           <p>
-              <code>
-              set current_head_position = starting_position
-set total_head_movement = 0
-
-for each request in the queue do:
-    set distance_to_request = abs(request - current_head_position)
-    add distance_to_request to total_head_movement
-    set current_head_position = request
-    
-print "Total head movement: ", total_head_movement
-
-              </code>
+            <code>
+              set current_head_position = starting_position set
+              total_head_movement = 0 for each request in the queue do: set
+              distance_to_request = abs(request - current_head_position) add
+              distance_to_request to total_head_movement set
+              current_head_position = request print "Total head movement: ",
+              total_head_movement
+            </code>
           </p>
         </div>
         <section>
@@ -171,47 +196,26 @@ print "Total head movement: ", total_head_movement
         </div>
       </div>
       <div className="chart-container">
-      <ResponsiveContainer width="100%" height="500%" aspect={3}>
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="requst" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="data" stroke="#8884d8" />
-        </LineChart>
-      </ResponsiveContainer>
-      {/* <ResponsiveContainer width="100%" height="100%" aspect={3}>
-        <LineChart
-          layout="vertical"
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis type="request" dataKey="requst" domain={[0, 'dataMax + 1000']} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line dataKey="data" type="monotone" stroke="#8884d8" />
-        </LineChart>
-      </ResponsiveContainer> */}
+        <ResponsiveContainer width="100%" height="500%" aspect={3}>
+          <LineChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="requst" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="data" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </>
   );

@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.final-home-page {
+  background-color: white;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(133, 204, 255),
+    rgb(193, 145, 255)
+  );
+  /* margin-top: -5em; */
+  height: 100vh;
+  margin-top: 0px;
+}
+.intro-section h1 {
+  font-family: "Changa One", cursive, "IBM Plex Sans", "Raleway", "Gill Sans",
+    "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 900;
+  font-size: 9.5em;
+  position: absolute;
+  top: 50vh;
+  left: 27%;
+  color: white;
+}
+.canvas-container canvas {
+  position: absolute;
+  /* justify-content: center;
+    align-items: center; */
+  height: 100vh;
+}
+
+.ellipse1 {
+  position: absolute;
+  width: 367px;
+  height: 367px;
+  left: -25px;
+  top: 3100px;
+  z-index: -1;
+  background: #a8d9ff;
+  filter: blur(150px);
+}
+.ellipse2 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 3300px;
+  right: 600px;
+  background: rgb(255, 194, 255);
+  filter: blur(150px);
+  z-index: -1;
+}
+.ellipse3 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  left: 1202px;
+  top: 3000px;
+  z-index: -1;
+  background: #8c9ef4;
+  filter: blur(180px);
+}
+.scroll-button {
+  border-radius: 50%;
+}
+.back-to-top-btn {
+  position: fixed;
+  background-color: rgb(201, 203, 255);
+  right: 15px;
+  top: 75%;
+  z-index: 50;
+  border-radius: 14em;
+  padding: 1em;
+}
+.team-section h1 {
+  font-family: "Raleway", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-weight: 900;
+  position: relative;
+  padding-top: 2.5em;
+  font-size: 3.5em;
+  z-index: 4;
+}
+/* repeat the pattern as desired for more particles */
+/* add more particles by duplicating these rules and incrementing the number */
+
+nav {
+  background-color: white;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: black;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.3em;
+  font-family: "Raleway", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  display: block;
+  margin: 0;
+}
+
+.dropdown-menu a {
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+/* css for algorithm section */
+.algorithms-section {
+  display: flex;
+  transform: translateX(1%);
+  transition: transform 0.5s ease-out;
+}
+.algorithms-section.loaded {
+  transform: translateY(0);
+}
+.algorithms-section h1 {
+  font-family: "Raleway", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  font-style: normal;
+  letter-spacing: 0.09em;
+  text-transform: capitalize;
+  text-align: left;
+}
+.algorithms-section p {
+  font-family: "Raleway", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 40px;
+  text-transform: capitalize;
+  color: black;
+  text-align: justify;
+}
+.algorithms-section h1:hover {
+  color: #0077cc;
+  transition: transform 0.5s ease-out;
+}
+
+.algo-vector img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+.data-section{
+  padding : 3em;
+  padding-top: 5em;
+  padding-left: 4em;
+}
+.algo-vector{
+  padding: 3em;
+  padding-top: 2em;
+}
+.button{
+  align-self: flex-end;
+}
+.button button{
+  padding: 3em;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  background-color: transparent;
+}
+.button a{
+  text-decoration: none;
+  font-size: 1.1em;
+  font-family: 200;
+  
+}
