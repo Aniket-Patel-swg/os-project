@@ -9,7 +9,7 @@ import Peterson from './Pages/Peterson';
 import OptPR from './Pages/OptPR';
 import FinalHomePage from './Pages/FinalHomePage';
 // import FCFSDisk from './Pages/FCFSDisk';
-
+import ChatBot from './Pages/ChatBot.jsx';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
              < Route path='/firstcomefirstserve' element={<FCFSNew />} />
              <Route path='/OptPR' element={<OptPR />} />
              <Route path='/' element={<FinalHomePage />} />
+             <Route path='/chat' element={<ChatBot />} />
          </Routes>
     </div>
   );
