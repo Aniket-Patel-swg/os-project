@@ -55,6 +55,30 @@ function App() {
       }
     },
     {
+      command : "Turn on Dark Mode",
+      callback : (e) => {
+
+        document.body.style.backgroundColor = " black ";
+
+      }
+    },
+    {
+      command : "Turn on light mode",
+      callback : (e) => {
+
+        document.body.style.backgroundColor = " Pink ";
+
+      }
+    },
+    {
+      command : "Turn on britght mode",
+      callback : (e) => {
+
+        document.body.style.backgroundColor = " white ";
+
+      }
+    },
+    {
       command : "Scroll to top",
       callback : (e) => {
         window.scrollTo({
