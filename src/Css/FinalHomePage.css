@@ -200,17 +200,3 @@ nav a {
   font-size: 1.1em;
   font-family: 200;
 }
-.chatbot-section{
-  position: absolute;
-  left: 10px;
-  top: 85vh;
-}
-.chat-circle{
-  border-radius: 50%;
-  background-color: #d7ddff;
-  padding: 1.5em;
-}
-.active-chatbot-section{
-  max-width: 100%;
-  max-height: 50vh;
-}

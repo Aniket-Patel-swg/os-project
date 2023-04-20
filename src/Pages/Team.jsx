@@ -4,12 +4,12 @@ import "../Css/Team.css";
 const Team = () => {
   return (
     <>
-      <div className="team-section">
+      <div className="team-section" id="team">
       <section class="articles">
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="" alt="" />
+              <img src="nupur.jpg" alt="" />
             </figure>
             <div class="article-body">
               <h2>NUPUR KAPOOR</h2>
@@ -22,7 +22,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="https://avatars.githubusercontent.com/u/111775702?v=4"
+                src="AniketPatel.jpg"
                 alt=""
               />
             </figure>
@@ -36,7 +36,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="https://picsum.photos/id/103/800/450" alt="" />
+              <img src="Khushi.jpg" alt="" />
             </figure>
             <div class="article-body">
               <h2>KHUSHI DESAI</h2>
@@ -50,7 +50,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="https://avatars.githubusercontent.com/u/120292073?v=4"
+                src="dev.jpg"
                 alt=""
               />
             </figure>
@@ -64,7 +64,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="" alt="" />
+              <img src="vishwa.png" alt="" />
             </figure>
             <div class="article-body">
               <h2>VISHWA NANAVATI</h2>

@@ -39,6 +39,9 @@ const NavBar = () => {
                     </a>
                   </li>
                 </ul>
+                <li>
+                <a href="/chatbot">Chat Bot</a>
+              </li>
               </li>
               {/* <li>
                 <a href="/tech Stack">Tech Stack</a>

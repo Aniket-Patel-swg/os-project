@@ -1,4 +1,4 @@
-import React, { useRef, useState, Suspense } from "react";
+import React, { useRef, useState,  Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import Blob from "../Blob/Blob.js";
@@ -23,11 +23,11 @@ const API_KEY = "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";
 const systemMessage = {
   role: "system",
   content:
-    "Explain things like you're talking to a software professional with 2 years of experience.",
+    "Explain things like you're talking to a student interested in operating system projects",
 };
+
 const FinalHomePage = () => {
   const [chatBotSelected, setChatBotSelected] = useState(false);
-  const [redirectURL, setRedirectURL] = useState("");
   const teamRef = useRef(null);
   const handleTeamClick = () => {
     teamRef.current.scrollIntoView({ behavior: "smooth" });
@@ -177,55 +177,6 @@ const FinalHomePage = () => {
             </div>
           </section>
         } */}
-        <section onClick={hanldeChatClick} className="chatbot-section">
-          {chatBotSelected ? (
-            <>
-              <div
-                className="chat-bot-enabled"
-                style={{
-                  position: "abosolut",
-                  height: "200vh",
-                  width: "100% ",
-                  left: "15px",
-                }}
-              >
-                {/* <ChatBot /> */}
-                <div className="active-chatbot-section"
-                style={{width : '350px', height: '450px'}}>
-                  <button onClick={handleCloseChatClick}>Close Chat</button>
-                  <MainContainer>
-                    <ChatContainer>
-                      <MessageList
-                        scrollBehavior="smooth"
-                        typingIndicator={
-                          isTyping ? (
-                            <TypingIndicator content="OSMate is typing" />
-                          ) : null
-                        }
-                      >
-                        {messages.map((message, i) => {
-                          // console.log(message);
-                          return <Message key={i} model={message} />;
-                        })}
-                      </MessageList>
-                      <MessageInput
-                        placeholder="Type message here"
-                        onSend={handleSend}
-
-                      />
-                    </ChatContainer>
-                  </MainContainer>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="chat-circle">
-                <ChatIcon />
-              </div>
-            </>
-          )}
-        </section>
         <section className="scroll-button">
           <div className="back-to-top-btn" onClick={handleClick}>
             <ArrowDropUpIcon fontSize="large" />
