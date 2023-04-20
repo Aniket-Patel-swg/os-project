@@ -9,7 +9,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="" alt="" />
+              <img src="nupur.jpg" alt="" />
             </figure>
             <div class="article-body">
               <h2>NUPUR KAPOOR</h2>
@@ -36,7 +36,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="https://picsum.photos/id/103/800/450" alt="" />
+              <img src="Khushi.jpg" alt="" />
             </figure>
             <div class="article-body">
               <h2>KHUSHI DESAI</h2>
@@ -64,7 +64,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="" alt="" />
+              <img src="vishwa.png" alt="" />
             </figure>
             <div class="article-body">
               <h2>VISHWA NANAVATI</h2>
