@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, Suspense } from "react";
+import React, { useRef, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import Blob from "../Blob/Blob.js";
@@ -18,7 +18,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const systemMessage = {
   role: "system",
@@ -27,6 +27,7 @@ const systemMessage = {
 };
 const FinalHomePage = () => {
   const [chatBotSelected, setChatBotSelected] = useState(false);
+  const [redirectURL, setRedirectURL] = useState("");
   const teamRef = useRef(null);
   const handleTeamClick = () => {
     teamRef.current.scrollIntoView({ behavior: "smooth" });
@@ -149,6 +150,7 @@ const FinalHomePage = () => {
     console.log('close chat clicked')
     setChatBotSelected(false);
   }
+
   return (
     <>
       <NavBar />
