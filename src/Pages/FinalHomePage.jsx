@@ -18,7 +18,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const systemMessage = {
   role: "system",
@@ -248,7 +248,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/peterson">
+            <a href="/SchedulingAlgo">
               <button> Open Simulator</button>
             </a>
           </section>
@@ -274,7 +274,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/SchedulingAlgo">
+            <a href="/Peterson">
               <button> Open Simulator</button>
             </a>
           </section>
