@@ -22,7 +22,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="https://avatars.githubusercontent.com/u/111775702?v=4"
+                src="AniketPatel.jpg"
                 alt=""
               />
             </figure>
@@ -50,7 +50,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="https://avatars.githubusercontent.com/u/120292073?v=4"
+                src="dev.jpg"
                 alt=""
               />
             </figure>
