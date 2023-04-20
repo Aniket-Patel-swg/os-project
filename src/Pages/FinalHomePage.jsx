@@ -321,7 +321,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/optr">
+            <a href="/Optimal">
               <button> Open Simulator</button>
             </a>
           </section>

@@ -22,6 +22,7 @@
     "react-gantt": "^2.1.8",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
+    "react-speech-recognition": "^3.10.0",
     "recharts": "^2.5.0",
     "three": "^0.151.3",
     "web-vitals": "^2.1.4"
