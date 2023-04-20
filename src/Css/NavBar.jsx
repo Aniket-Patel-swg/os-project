@@ -29,7 +29,7 @@ const NavBar = () => {
                     <a href="/peterson">Peterson Algorithm</a>
                   </li>
                   <li>
-                    <a href="/firstcomefirstserve">
+                    <a href="/fcfs">
                       First Come First Serve <br /> Disc Scheduling
                     </a>
                   </li>

@@ -58,7 +58,7 @@ function App() {
       command : "Turn on Dark Mode",
       callback : (e) => {
 
-        document.body.style.backgroundColor = " black ";
+        document.body.style.backgroundColor = " #0A192F ";
 
       }
     },
@@ -66,12 +66,12 @@ function App() {
       command : "Turn on light mode",
       callback : (e) => {
 
-        document.body.style.backgroundColor = " Pink ";
+        document.body.style.backgroundColor = " #F0F4F8 ";
 
       }
     },
     {
-      command : "Turn on britght mode",
+      command : "Turn on bright mode",
       callback : (e) => {
 
         document.body.style.backgroundColor = " white ";
@@ -115,6 +115,7 @@ function App() {
   return (
     <div className="App">
       {/* <p>Microphone: {listening ? 'on' : 'off'}</p> */}
+      <div className="voice-bot-section">
       <button
         className="start-btn"
         onClick={SpeechRecognition.startListening({
@@ -130,12 +131,13 @@ function App() {
       <button className="reset-btn" onClick={resetTranscript}>
         Reset
       </button>
-      <p>{transcript}</p>
+      <p>Transcript : {transcript}</p>
+      </div>
       <Routes>
         <Route path="/SchedulingAlgo" element={<SchedulingAlgo />} />
         {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
         <Route path="/peterson" element={<Peterson />} />
-        <Route path="/firstcomefirstserve" element={<FCFSNew />} />
+        <Route path="/fcfs" element={<FCFSNew />} />
         <Route path="/Optimal" element={<Optimal />} />
         <Route path="/" element={<FinalHomePage />} />
         <Route path="/chatbot " element={<ChatBot />} />

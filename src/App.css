@@ -91,3 +91,20 @@ body{
   border-radius: 4px;
   cursor: pointer;
 }
+.voice-bot-section {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.voice-bot-section.active {
+  height: 200px;
+  overflow-y: scroll;
+}
+

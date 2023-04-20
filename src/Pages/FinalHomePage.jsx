@@ -154,6 +154,7 @@ const FinalHomePage = () => {
   return (
     <>
       <NavBar />
+      <div className="full-homepage-container">
       <div class="particles">
         <div className="final-home-page">
           <div className="canvas-container">
@@ -248,7 +249,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/firstcomefirstserve">
+            <a href="/fcfs">
               <button> Open Simulator</button>
             </a>
           </section>
@@ -286,6 +287,7 @@ const FinalHomePage = () => {
         <div className="ellipse1"></div>
         <div className="ellipse2"></div>
         <div className="ellipse3"></div>
+      </div>
       </div>
       <Team />
     </>

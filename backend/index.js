@@ -300,6 +300,6 @@ mongoose.connect(process.env.mongo, (err) => {
     if(err) throw err;
     app.listen(8000, (err)=>{
         if(err) throw err;
-        console.log("App is listening on port 8000");
+        console.log("App is listeninfing on port 8000");
     })
 })
