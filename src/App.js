@@ -94,6 +94,42 @@ function App() {
       },
     },
     {
+      command: "Scroll to priority scheduling",
+      callback: (e) => {
+        window.scrollTo({
+          top: 750,
+          behavior: "smooth",
+        });
+      },
+    },
+    {
+      command: "Scroll to peterson",
+      callback: (e) => {
+        window.scrollTo({
+          top: 1000,
+          behavior: "smooth",
+        });
+      },
+    },
+    {
+      command: "Scroll to fcfs",
+      callback: (e) => {
+        window.scrollTo({
+          top: 1000,
+          behavior: "1150",
+        });
+      },
+    },
+     {
+      command: "Scroll to optimal",
+      callback: (e) => {
+        window.scrollTo({
+          top: 1000,
+          behavior: "1350",
+        });
+      },
+    },
+    {
       command: "About Team",
       callback: (e) => {
         const element = document.querySelector("#team");
@@ -142,7 +178,7 @@ function App() {
         <p>Transcript : {transcript}</p>
       </div>
       <Routes>
-        <Route path="/SchedulingAlgo" element={<SchedulingAlgo />} />
+        <Route path="/Scheduling" element={<SchedulingAlgo />} />
         {/* <Route path='/FCFSDisk' element = {<FCFSDisk />}/> */}
         <Route path="/peterson" element={<Peterson />} />
         <Route path="/fcfs" element={<FCFSNew />} />

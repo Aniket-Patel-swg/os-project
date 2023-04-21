@@ -1,6 +1,7 @@
 import React, { useRef, useState,  Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { Html, OrbitControls } from "@react-three/drei";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Blob from "../Blob/Blob.js";
 import "../Css/FinalHomePage.css";
 import NavBar from "../Css/NavBar.jsx";
@@ -9,6 +10,34 @@ import Team from "./Team.jsx";
 
 
 const FinalHomePage = () => {
+  /* For three 3d model */ 
+
+  const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
+    const ref = useRef();
+    const gltf = useLoader(GLTFLoader, modelPath);
+    const [hovered, setHovered] = useState(false);
+
+    useFrame((state, delta) => (ref.current.rotation.y += 0.003));
+    return (
+      <primitive
+        ref={ref}
+        object={gltf.scene}
+        scale={hovered ? scale * 0.35 : scale * 0.355}
+        position={position}
+        onMouseOver={(e) => setHovered(true)}
+        onMouseOut={(e) => setHovered(false)}
+    
+      />
+    );
+  };
+  const ModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
+    return (
+      <Suspense>
+        <GLTFModel modelPath={modelPath} scale={scale} position={position} />
+        <OrbitControls />
+      </Suspense>
+    );
+  };
   
   const teamRef = useRef(null);
   const handleTeamClick = () => {
@@ -66,19 +95,39 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/peterson">
+            <a href="/scheduling">
               <button> Open Simulator</button>
             </a>
           </section>
         </div>
         <div className="algo-vector">
-          <img src="system.png" alt="" />
+        <section className="3d-model-section" >
+          <div className="canvas-wrapper">
+            <Canvas camera={{ position: [92, 90, 90] }}>
+              <OrbitControls />
+              <ambientLight intensity={1.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[10, 10, 10]} />  
+              <ModelViewer modelPath="./raspberry_pi.glb" />
+            </Canvas>
+          </div>
+        </section>
         </div>
       </div>
 
       <div className="algorithms-section">
         <div className="algo-vector">
-          <img src="tech.png" alt="" />
+        <section className="3d-model-section" >
+          <div className="canvas-wrapper">
+            <Canvas camera={{ position: [10, 25, 10] }}>
+              <OrbitControls />
+              <ambientLight intensity={1.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[10, 10, 10]} />  
+              <ModelViewer modelPath="./computer_components.glb" />
+            </Canvas>
+          </div>
+        </section>
         </div>
         <div className="algo-info1">
           <section className="data-section">
@@ -92,7 +141,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/SchedulingAlgo">
+            <a href="/peterson">
               <button> Open Simulator</button>
             </a>
           </section>
@@ -119,13 +168,33 @@ const FinalHomePage = () => {
           </section>
         </div>
         <div className="algo-vector">
-          <img src="puzzle.png" alt="" />
+        <section className="3d-model-section" >
+          <div className="canvas-wrapper">
+            <Canvas camera={{ position: [10, 25, 10] }}>
+              <OrbitControls />
+              <ambientLight intensity={1.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[10, 10, 10]} />  
+              <ModelViewer modelPath="./space_station_3.glb" />
+            </Canvas>
+          </div>
+        </section>
         </div>
       </div>
 
       <div className="algorithms-section">
         <div className="algo-vector">
-          <img src="tech.png" alt="" />
+        <section className="3d-model-section" >
+          <div className="canvas-wrapper">
+            <Canvas camera={{ position: [10, 25, 10] }}>
+              <OrbitControls />
+              <ambientLight intensity={1.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[10, 10, 10]} />  
+              <ModelViewer modelPath="./laptop.glb" />
+            </Canvas>
+          </div>
+        </section>
         </div>
         <div className="algo-info1">
           <section className="data-section">
@@ -139,7 +208,7 @@ const FinalHomePage = () => {
             </p>
           </section>
           <section className="button">
-            <a href="/optr">
+            <a href="/optimal">
               <button> Open Simulator</button>
             </a>
           </section>

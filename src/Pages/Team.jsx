@@ -9,7 +9,7 @@ const Team = () => {
         <article>
           <div class="article-wrapper">
             <figure>
-              <img src="nupur.jpg" alt="" />
+              <img src="NupurKapoor.jpg" alt="" />
             </figure>
             <div class="article-body">
               <h2>NUPUR KAPOOR</h2>
@@ -22,7 +22,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="AniketPatel.jpg"
+                src="aniket.jpeg"
                 alt=""
               />
             </figure>
@@ -50,7 +50,7 @@ const Team = () => {
           <div class="article-wrapper">
             <figure>
               <img
-                src="dev.jpg"
+                src="DevChapatwala.jpeg"
                 alt=""
               />
             </figure>

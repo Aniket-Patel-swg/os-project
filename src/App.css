@@ -91,16 +91,18 @@ body{
 }
 .voice-bot-section {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: white;
+  bottom: 75px;
+  left: 50px;
+  background-color: #f5faff;
   border: 1px solid gray;
   border-radius: 10px;
   padding: 10px;
   transition: all 0.3s ease;
   z-index: 999;
 }
-
+.voice-bot-section p{
+  color: black;
+}
 .voice-bot-section.active {
   height: 200px;
   overflow-y: scroll;

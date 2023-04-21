@@ -23,7 +23,7 @@ const NavBar = () => {
                 <a href="#">Algorithms</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="/SchedulingAlgo">Priority Scheduling</a>
+                    <a href="/Scheduling">Priority Scheduling</a>
                   </li>
                   <li>
                     <a href="/peterson">Peterson Algorithm</a>
@@ -34,7 +34,7 @@ const NavBar = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="OptPR">
+                    <a href="Optimal">
                       Optimal Page <br /> Replacement
                     </a>
                   </li>

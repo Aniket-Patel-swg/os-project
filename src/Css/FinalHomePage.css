@@ -207,3 +207,7 @@ nav a {
   font-family: 200;
   color: #D3D3D3;
 }
+.canvas-wrapper canvas{
+  width: 450px;
+  height: 450px;
+}
