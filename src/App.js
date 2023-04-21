@@ -7,7 +7,6 @@ import "./Css/Homepage.css";
 import Peterson from "./Pages/Peterson";
 import Optimal from "./Pages/Optimal";
 import FinalHomePage from "./Pages/FinalHomePage";
-// import FCFSDisk from './Pages/FCFSDisk';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
