@@ -8,34 +8,33 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
+import NavBar from "../Css/NavBar";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const systemMessage = {
   role: "system",
   content:
-    "Explain things like you're talking to a student interested in operating system projects",
+    "Explain things like you're talking to a student who want to learn operating system. Also you're developed by students of PDEU named 'Aniket Patel', 'Dev Chapatwala', 'Nupur Kapoor', 'Vishwa Nanavati','Khushi Desai'. Also this website is about operating system algorithms simulation mainly 1) Priority Preemptive Scheduling algorithm 2) Peterson Algorithm 3) First come First serve algorithm 4) Optimal Page Replacement Algorithm ",
 };
 
-const ChatBot = () => {
-
+const AIBot = () => {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm OSMate bot! Ask me anything!",
+      message: "Hello, I'm OS Mate! How canI help you? ",
       sentTime: "just now",
-      sender: "OSProject bot",
+      sender: "ChatGPT",
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
 
-  // creating message object with message as input given from user and then passing to message state above
   const handleSend = async (message) => {
     const newMessage = {
       message,
       direction: "outgoing",
       sender: "user",
     };
-    // getting all old messages + the recent new message
+
     const newMessages = [...messages, newMessage];
 
     setMessages(newMessages);
@@ -47,19 +46,6 @@ const ChatBot = () => {
   };
 
   async function processMessageToChatGPT(chatMessages) {
-      // check if the last message is "What you can do for me!"
-    const lastMessage = chatMessages[chatMessages.length - 1].message;
-    if (lastMessage === "What you can do for me!") {
-      setMessages([
-        ...chatMessages,
-        {
-          message: "I can solve your all Operating System Related Doubts",
-          sender: "ChatGPT",
-        },
-      ]);
-      setIsTyping(false);
-      return;
-    }
     // messages is an array of messages
     // Format messages for chatGPT API
     // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
@@ -80,7 +66,6 @@ const ChatBot = () => {
     // determine how we want chatGPT to act.
     const apiRequestBody = {
       model: "gpt-3.5-turbo",
-      temperature : 0.5,
       messages: [
         systemMessage, // The system message DEFINES the logic of our chatGPT
         ...apiMessages, // The messages from our chat with ChatGPT
@@ -109,44 +94,41 @@ const ChatBot = () => {
         ]);
         setIsTyping(false);
       });
-  }  
-  
+  }
+
   return (
     <>
-      <div className="chat-section">
-        <div className="App">
-          <div
-            style={{ position: "abosolute", height: "800px", width: "700px" }}
-          >
-           <div className="active-chatbot-section">
-                   <MainContainer>
-                    <ChatContainer>
-                      <MessageList
-                        scrollBehavior="smooth"
-                        typingIndicator={
-                          isTyping ? (
-                            <TypingIndicator content="OSMate is typing" />
-                          ) : null
-                        }
-                      >
-                        {messages.map((message, i) => {
-                          // console.log(message);
-                          return <Message key={i} model={message} />;
-                        })}
-                      </MessageList>
-                      <MessageInput
-                        placeholder="Type message here"
-                        onSend={handleSend}
-
-                      />
-                    </ChatContainer>
-                  </MainContainer>
-                </div>
-          </div>
+      <NavBar />
+      <div className="chatbot-section">
+        <div style={{ position: "relative", height: "75vh", width: "100%" }}>
+          <MainContainer>
+            <ChatContainer >
+              <MessageList
+                style={{ textAlign : 'left', backgroundColor : '#f5f5f5', color : 'red', padding : '2.3em'}}
+                scrollBehavior="smooth"
+                typingIndicator={
+                  isTyping ? (
+                    <TypingIndicator content="OS Mate is typing" />
+                  ) : null
+                }
+              >
+                {messages.map((message, i) => {
+                  console.log(message);
+                  return <Message style={{color : 'black'}} key={i} model={message} />;
+                })}
+              </MessageList>
+              check text
+              <MessageInput
+                placeholder="Type message here"
+                onSend={handleSend}
+                style={{bottom : '1em'}}
+              />
+            </ChatContainer>
+          </MainContainer>
         </div>
       </div>
     </>
   );
 };
 
-export default ChatBot;
+export default AIBot;

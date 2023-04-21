@@ -39,13 +39,10 @@ const NavBar = () => {
                     </a>
                   </li>
                 </ul>
-                <li>
-                <a href="/chatbot">Chat Bot</a>
               </li>
+              <li>
+                <a href="/chat">Chat Bot</a>
               </li>
-              {/* <li>
-                <a href="/tech Stack">Tech Stack</a>
-              </li> */}
             </ul>
           </nav>
         </section>

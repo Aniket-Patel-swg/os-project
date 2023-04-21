@@ -1,7 +1,6 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  margin-top: 50px;
 }
 body{
   overflow-x: hidden;
@@ -9,7 +8,6 @@ body{
 *{
   padding: 0px;
   margin: 0px;
-  
 }
 ul {
   list-style: none;
